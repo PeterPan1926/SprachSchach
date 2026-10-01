@@ -1,0 +1,5 @@
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.pwa-card p{font-size:13px;line-height:1.5}.desktop-camera video{max-height:48dvh}
+@media(orientation:portrait){.desktop.lcd-compact #board{max-width:100%!important}}
+@media(orientation:landscape) and (min-height:651px){.desktop.lcd-compact #lcdPanel #lcdMove.lcd-inline-pv{height:116px;grid-template-rows:repeat(3,minmax(0,1fr));gap:4px}.desktop.lcd-compact #lcdPanel{position:relative;height:auto}}
+@media(hover:none){button,input:not([type=checkbox]):not([type=range]),select{min-height:44px}#board button{min-height:0}.desktop-dialog{width:calc(100vw - 32px)}}
