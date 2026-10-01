@@ -1,0 +1,16 @@
+.desktop main{max-width:1180px}.desktop #board{container-type:inline-size;margin-left:auto;margin-right:auto}.desktop #board .square{font-size:11.5cqw}.desktop:not(.lcd-compact) #board{max-width:640px!important}
+.desktop-dialog{width:min(620px,calc(100vw - 48px));max-height:calc(100dvh - 48px);overflow-y:auto;padding:20px}.desktop-dialog label{display:block;margin:12px 0}.desktop-dialog input,.desktop-dialog select{width:100%;max-width:100%;margin-top:6px}.desktop-camera video{width:100%;max-height:55dvh;object-fit:contain;background:#000}.desktop-dialog h2{margin-top:0}
+@media(min-width:900px) and (min-height:651px){
+ .desktop.lcd-compact #playArea{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:minmax(0,1fr) auto;gap:12px 24px;height:min(62vh,650px)}
+ .desktop.lcd-compact #board{grid-column:1;grid-row:1/3;width:min(100%,62vh,650px);max-width:100%!important;align-self:start}
+ .desktop.lcd-compact #lcdPanel{grid-column:2;grid-row:1;align-self:stretch;margin:0;display:flex;flex-direction:column;min-height:0;padding:20px}
+ .desktop.lcd-compact #lcdPanel .lcd-inline-primary{flex:1;align-items:center}
+ .desktop.lcd-compact #lcdPanel #lcdEvaluation{height:90px}
+ .desktop.lcd-compact #lcdPanel #lcdMove{height:56px;flex:none;gap:24px}
+ .desktop.lcd-compact #lcdPanel #lcdDepth{height:32px;width:64px}.desktop.lcd-compact #lcdPanel #lcdTime{height:24px;width:112px}
+ .desktop.lcd-compact #lcdPanel #lcdNotation{font-size:15px;margin-top:12px}
+ .desktop.lcd-compact #lcdPanel .lcd-label{font-size:13px}.desktop.lcd-compact #lcdPanel #lcdState{font-size:12px}
+ .desktop.lcd-compact #replayControls{grid-column:2;grid-row:2;margin:0;min-width:0}
+}
+
+@media(min-width:900px) and (min-height:651px){.desktop.lcd-compact #lcdPanel #lcdMove.lcd-inline-pv{height:calc(var(--lcd-pv-rows,2)*36px + (var(--lcd-pv-rows,2) - 1)*4px);gap:4px}}

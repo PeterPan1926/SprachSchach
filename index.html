@@ -1,82 +1,134 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <title>SprachSchach</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle at top, rgba(59,130,246,.18), transparent 38rem),
-        linear-gradient(160deg, #0b1020, #111827 55%, #0b1020);
-      color: #f8fafc;
-    }
-    main {
-      width: min(92vw, 760px);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .knight {
-      font-size: clamp(4rem, 12vw, 7rem);
-      line-height: 1;
-      filter: drop-shadow(0 10px 25px rgba(0,0,0,.35));
-    }
-    h1 {
-      margin: 1rem 0 .5rem;
-      font-size: clamp(2.4rem, 8vw, 4.8rem);
-      letter-spacing: -.04em;
-    }
-    p {
-      margin: .5rem auto;
-      max-width: 42rem;
-      color: #cbd5e1;
-      font-size: 1.1rem;
-      line-height: 1.65;
-    }
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      margin-top: 1.6rem;
-      padding: .8rem 1rem;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      color: #e2e8f0;
-      backdrop-filter: blur(10px);
-    }
-    .dot {
-      width: .7rem;
-      height: .7rem;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 16px rgba(34,197,94,.75);
-    }
-    footer {
-      margin-top: 2.5rem;
-      color: #64748b;
-      font-size: .9rem;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <div class="knight" aria-hidden="true">♞</div>
-    <h1>SprachSchach</h1>
-    <p>Die Weboberfläche für das SprachSchach-Projekt ist eingerichtet.</p>
-    <p>Diese Seite kann jetzt Schritt für Schritt um Schachbrett, Spracheingabe und Spiellogik erweitert werden.</p>
-    <div class="status"><span class="dot"></span> GitHub Pages bereit</div>
-    <footer>SprachSchach · PeterPan1926</footer>
-  </main>
-</body>
-</html>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>SprachSchach</title><style>
+:root{color-scheme:dark;--accent:#a4e6c5}*{box-sizing:border-box}body{margin:0;background:#101c23;color:#edf3f5;font:16px system-ui,sans-serif}main{max-width:560px;margin:auto;padding:18px}header{display:flex;justify-content:space-between;align-items:center}h1{font-size:26px;margin:4px 0}small{color:#b1c2cc}.badge{color:var(--accent);font-size:12px;letter-spacing:2px}select,button,input{font:inherit;border-radius:10px;border:1px solid #49616e;padding:10px;background:#20343f;color:white}button{cursor:pointer}button:disabled{opacity:.5}select{max-width:155px}#status{min-height:26px;margin:14px 0;color:var(--accent)}#board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;aspect-ratio:1;border:4px solid #49616e;border-radius:10px;overflow:hidden}.square{position:relative;aspect-ratio:1;padding:0;border:0;border-radius:0;font-family:"Noto Sans Symbols 2","DejaVu Sans",serif;font-size:clamp(26px,8vw,48px);color:#16242b;line-height:1;background:#dbe3d8}.square.dark{background:#759386}.square.white{color:white;text-shadow:0 1px 2px #000,1px 0 #000,-1px 0 #000}.square.selected{background:#edc36e}.square.last{box-shadow:inset 0 0 0 3px #e2ba5d}.square.target:after{content:'';position:absolute;inset:40%;background:#153b32aa;border-radius:50%}.controls{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap}#mic{flex:1;background:var(--accent);color:#102923;font-weight:700}.entry{display:flex;gap:7px}.entry input{min-width:0;flex:1}.card{background:#1a2d37;border:1px solid #304954;border-radius:12px;padding:14px;margin-top:14px}#explanation{line-height:1.5;margin:8px 0}#message{color:#f6ce8e;line-height:1.4;margin:10px 0}.hint{font-size:13px;color:#b1c2cc;line-height:1.5}#history{white-space:pre-wrap;font-size:14px;line-height:1.6}label{font-size:14px}dialog{background:#20343f;color:white;border:1px solid #6b8b9a;border-radius:14px;max-width:90%}dialog::backdrop{background:#0009}#choices{display:flex;flex-wrap:wrap;gap:8px}button:focus-visible,input:focus-visible{outline:3px solid #edc36e}.footer{margin-top:15px;font-size:12px;color:#8fa6b3}
+.chat-item{padding:12px 0;border-bottom:1px solid #304954}.chat-item:last-child{border-bottom:0}.chat-item p,#summaryText p{white-space:pre-wrap;line-height:1.6;margin:6px 0}.chat-item.input{color:#a4e6c5}.chat-item.summary{background:#203b3b;border-radius:8px;padding:12px}.archive-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}#archive{max-width:100%;width:100%}#saveState,#analysisState{font-size:13px;line-height:1.5;color:#b1c2cc}[hidden]{display:none!important}.position-diagram{margin:12px 0 22px;max-width:320px;width:100%}.position-diagram figcaption{font-size:14px;line-height:1.5;margin-bottom:8px;color:#edf3f5}.position-diagram>small{display:block;margin-top:8px;line-height:1.5;font-size:12px}.diagram-board{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));aspect-ratio:1;border:3px solid #49616e;border-radius:8px;overflow:hidden}.diagram-square{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:#dbe3d8;color:#16242b;font-family:"Noto Sans Symbols 2","DejaVu Sans",serif;font-size:clamp(20px,7vw,37px);line-height:1;min-width:0}.diagram-square.dark{background:#759386}.diagram-square.white{color:white;text-shadow:0 1px 2px #000,1px 0 #000,-1px 0 #000}.diagram-square.diagram-from{background:#edc36e}.diagram-square.diagram-to{background:#a4e6c5;box-shadow:inset 0 0 0 3px #237658}.lcd-toggle{display:block;margin:10px 0}.lcd-panel{background:linear-gradient(140deg,#d5d5d5,#bcbcbc);color:#202020;border:7px solid #454545;border-radius:12px;padding:18px;margin:12px 0 18px;box-shadow:inset 0 3px 10px #20202044,0 4px 0 #080e11;font-family:monospace}.lcd-title{font-size:15px;letter-spacing:3px;margin-bottom:15px}.lcd-label{font-size:13px;letter-spacing:1px;margin:8px 0}.lcd-value{height:74px;width:100%;max-width:360px;margin:8px 0}.lcd-digits{width:100%;height:100%;display:block;filter:drop-shadow(1px 2px 0 #20202018)}.lcd-divider{border-top:1px solid #20202055;margin:16px 0}.lcd-small{font-size:11px;line-height:1.6;margin-top:7px}#lcdRetry{background:#bcbcbc;color:#202020;border-color:#20202077;margin-top:8px}.position-import{box-sizing:border-box;width:min(96vw,540px);max-height:92vh;overflow:auto;background:#162b33;color:#edf3f5;border:2px solid #759386;border-radius:12px;padding:18px}.position-import::backdrop{background:#000b}.position-import label{display:block;margin:12px 0}.position-import select,.position-import input:not([type=checkbox]),.position-import textarea{max-width:100%;box-sizing:border-box}.position-import select{width:100%}.position-import p{line-height:1.5}.position-import canvas{width:100%;height:auto;touch-action:none;border-radius:6px;margin-top:12px}.piece-palette{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:10px 0}.piece-palette button{font-family:serif;font-size:28px;padding:5px;color:#16242b;background:#759386}.piece-palette button.white{color:white;text-shadow:0 1px 2px #000}.piece-palette [aria-pressed=true]{outline:3px solid #edc36e}.position-import #positionBoard button{padding:0;border:0;border-radius:0;min-height:0;min-width:0}.position-import .uncertain{box-shadow:inset 0 0 0 4px #ee9629}.position-import textarea{width:100%;margin:10px 0}.position-import .rights{display:grid;grid-template-columns:1fr 1fr}.position-import #photoStatus{color:#a4e6c5;white-space:pre-wrap}#analysisHint{line-height:1.5}.engine-options{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}.engine-options label{display:flex;flex-direction:column;gap:6px;flex:1;min-width:140px}.engine-options select{max-width:100%;width:100%}.lcd-full-timing{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px}.lcd-full-timing label{font:inherit}.lcd-full-timing select{background:transparent;color:inherit;border-color:#20202066;border-radius:5px;font:inherit;padding:4px 8px;min-height:32px;max-width:120px}.lcd-buttons{margin-top:12px}.lcd-buttons button{background:#bcbcbc;color:#202020;border-color:#20202077}.lcd-is-fullscreen{overflow:hidden}.lcd-fullscreen-panel{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;z-index:10000;background:linear-gradient(140deg,#d5d5d5,#bcbcbc);color:#202020;border:clamp(5px,1.5vmin,12px) solid #454545;box-shadow:inset 0 3px 12px #20202044;font-family:monospace;display:flex;flex-direction:column;padding:clamp(8px,2vmin,20px);gap:clamp(6px,1.5vmin,14px)}.lcd-full-header{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:0 0 auto;letter-spacing:1px;font-size:clamp(11px,2.8vmin,19px)}.lcd-full-header button,.lcd-full-actions button{background:#bcbcbc;color:#202020;border:1px solid #20202077;min-height:44px;padding:6px 10px;font-family:monospace}.lcd-full-header button{min-width:44px;font-size:26px}.lcd-fullscreen-panel #lcdFullTap{flex:1;min-height:0;cursor:pointer;outline-offset:2px}.lcd-full-content{height:100%;display:grid;grid-template-rows:minmax(0,1.8fr) minmax(0,1fr);gap:clamp(10px,3vmin,24px)}.lcd-full-detail{min-height:0;min-width:0}.lcd-full-variation{display:grid;grid-template-rows:repeat(var(--lcd-rows,3),minmax(0,1fr));gap:clamp(5px,1vmin,12px)}.lcd-pv-line{display:grid;grid-template-columns:3.5ch minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(6px,1.5vmin,14px);min-height:0;min-width:0}.lcd-pv-row{height:100%;min-height:0;min-width:0}.lcd-inline-line{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.lcd-inline-half{height:100%;min-width:0}.lcd-panel{color-scheme:light}.lcd-panel input{accent-color:#303030}.lcd-panel button:focus-visible,.lcd-fullscreen-panel button:focus-visible,.lcd-fullscreen-panel select:focus-visible{outline:3px solid #303030}.lcd-fullscreen-panel{color-scheme:light}.lcd-pv-number{font-size:clamp(13px,3.5vmin,22px);min-width:3.5ch}.lcd-full-digits{height:100%;width:100%;min-height:0;min-width:0;flex:1}.lcd-full-digits .lcd-digits{width:100%;height:100%}.lcd-full-metrics{display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:3vmin}.lcd-full-metric,.lcd-full-score{display:flex;flex-direction:column;min-height:0;min-width:0}.lcd-full-score{border-top:1px solid #20202055;padding-top:2vmin}.lcd-full-score .lcd-label,.lcd-full-metric .lcd-label{font-size:clamp(12px,2.8vmin,18px);margin:0 0 8px;flex:0 0 auto}.lcd-full-score .lcd-small{font-size:clamp(10px,2.2vmin,14px);flex:0 0 auto;margin-top:8px}.lcd-full-footer{flex:0 0 auto;font-size:clamp(10px,2.4vmin,14px)}.lcd-full-actions{display:flex;justify-content:space-between;gap:8px;margin-top:6px}.lcd-full-actions button{font-size:clamp(10px,2.2vmin,14px)}@media(orientation:landscape){.lcd-full-content{grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:4vmin}.lcd-full-score{border-top:0;border-left:1px solid #20202055;padding-top:0;padding-left:4vmin;justify-content:center}.lcd-full-score .lcd-full-digits{max-height:60%;}.lcd-full-header{font-size:clamp(11px,3vmin,20px)}.lcd-full-score .lcd-small{font-size:clamp(10px,2.8vmin,16px)}}@media(max-height:340px){.lcd-fullscreen-panel{padding:5px;gap:4px}.lcd-full-header button,.lcd-full-actions button{min-height:36px}.lcd-full-footer{font-size:10px}.lcd-full-actions{margin-top:2px}}.replay-arrows{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.replay-arrows button{min-height:48px;font-size:24px;padding:6px}
+/* Keep evaluation dominant at the top in both device orientations. */
+.lcd-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.lcd-panel #lcdEvaluation{height:112px;max-width:none}
+.lcd-inline-line{gap:clamp(24px,7vw,44px)}
+.lcd-full-content{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(8px,2vmin,18px)}
+.lcd-full-score{border:0;border-bottom:1px solid #20202055;padding:0 0 2vmin;justify-content:flex-start}
+.lcd-full-score .lcd-full-digits{max-height:none}
+.lcd-pv-line{grid-template-columns:3.5ch minmax(0,1fr) minmax(0,1fr);column-gap:clamp(22px,6vmin,64px)}
+.lcd-pv-number{min-width:0;font-size:clamp(12px,3vmin,20px)}
+.lcd-pv-row{display:flex;align-items:center}
+.lcd-pv-row .lcd-full-digits{height:clamp(24px,8vmin,64px);max-height:100%;flex:none}
+.lcd-full-metrics{grid-template-rows:minmax(0,1fr) minmax(0,.7fr);gap:clamp(4px,1.5vmin,12px)}
+.lcd-full-metric{justify-content:center}
+.lcd-full-metric .lcd-full-digits{flex:none;height:clamp(24px,9vmin,64px);max-height:50%;width:55%}
+.lcd-full-metric[data-metric=time] .lcd-full-digits{height:clamp(16px,4.8vmin,30px);width:45%}
+.lcd-full-metric[data-metric=time] .lcd-label{font-size:clamp(10px,2.2vmin,14px);margin-bottom:4px}
+.lcd-full-variation{gap:clamp(5px,1.5vmin,14px)}
+.lcd-minimal .lcd-full-header{position:absolute;right:6px;top:6px;z-index:1}
+.lcd-minimal .lcd-full-header>span,.lcd-minimal .lcd-full-footer{display:none}
+.lcd-minimal .lcd-full-header button{padding:0;min-width:44px;min-height:44px;width:44px;height:44px;font-size:20px;background:transparent;border:0}
+.lcd-minimal{padding-top:clamp(24px,5vmin,40px)}
+.lcd-minimal .lcd-full-content{grid-template-rows:minmax(0,1.2fr) minmax(0,1fr)}
+@media(orientation:landscape){.lcd-full-score{border-left:0;padding-left:0}.lcd-full-metrics{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:6vmin}.lcd-full-metric .lcd-full-digits{width:70%}.lcd-full-metric[data-metric=time] .lcd-full-digits{width:65%}.lcd-full-score .lcd-label{font-size:clamp(10px,2.6vmin,16px);margin-bottom:3px}.lcd-full-score .lcd-small{font-size:clamp(9px,2.3vmin,12px);margin-top:2px}.lcd-full-score{padding-bottom:1vmin}.lcd-full-content{gap:1.5vmin}}
+
+/* Compact local display: keep the board and its navigation in the viewport. */
+.lcd-full-variation{grid-template-rows:repeat(var(--lcd-rows,3),minmax(0,1fr)) auto}
+.lcd-search-stats{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #20202044;padding-top:5px;font-size:clamp(10px,2.2vmin,14px)}
+.lcd-search-stats>div{display:flex;align-items:center;gap:8px;min-width:0}
+.lcd-search-stats .lcd-full-digits{height:clamp(16px,4.5vmin,24px);width:70px;flex:none}
+.lcd-search-stats [data-metric=time] .lcd-full-digits{height:clamp(12px,3.4vmin,18px);width:110px}
+#lcdPanel{border-width:4px;padding:8px 10px;margin:6px 0 8px;border-radius:8px}
+.lcd-inline-primary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center}
+#lcdPanel .lcd-label{font-size:10px;letter-spacing:.5px;margin:2px 0}
+#lcdPanel #lcdEvaluation{height:40px;margin:2px 0;width:100%;max-width:none}
+.lcd-inline-stats{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:10px}
+.lcd-inline-stats>div{min-width:0}
+#lcdDepth{width:45px;height:18px;margin-top:3px}
+#lcdTime{width:78px;height:13px;margin-top:3px}
+#lcdPanel #lcdMove{height:24px;margin:3px 0;gap:clamp(22px,6vw,40px)}
+#lcdPanel #lcdNotation{font-size:10px;line-height:1.2;margin:2px 0}
+#lcdPanel #lcdState{font-size:9px;line-height:1.2;margin:3px 0 0}
+#lcdTools{margin:8px 0 12px}
+#lcdTools .lcd-buttons{margin:0 0 8px}
+#playArea{min-width:0}
+.lcd-compact main{padding:10px 12px}
+.lcd-compact h1{font-size:22px}
+.lcd-compact #status{font-size:14px;min-height:22px;margin:6px 0}
+.lcd-compact .lcd-toggle{margin:6px 0;font-size:13px}
+.lcd-compact #board{margin:0 auto}
+.lcd-compact #board .square{font-size:var(--piece-size,30px)}
+.lcd-compact #replayControls{padding:0;border:0;background:transparent;margin-top:6px}
+.lcd-compact #replayLabel{display:none}
+.lcd-compact .replay-arrows{margin:4px 0;gap:8px}
+.lcd-compact .replay-arrows button{min-height:44px;font-size:22px}
+.lcd-compact #replayState{font-size:11px;line-height:1.2;margin:4px 0}
+@media(max-height:700px){.lcd-compact #replaySlider{display:none}}
+@media(orientation:landscape) and (max-height:500px){.lcd-compact main{max-width:960px}.lcd-compact #playArea{display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);gap:8px;align-items:start}.lcd-compact #lcdPanel{grid-column:1;grid-row:1/3;margin-top:0}.lcd-compact #board{grid-column:2;grid-row:1}.lcd-compact #replayControls{grid-column:2;grid-row:2;margin-top:0}.lcd-compact header .badge,.lcd-compact header #subtitle{display:none}.lcd-compact header h1{font-size:20px}.lcd-compact header select{padding:5px}.lcd-compact #status{margin:3px 0}}
+.speech-provider-row{display:flex;flex-direction:column;gap:6px;margin-top:12px}.speech-provider-row select{max-width:100%;width:100%}
+/* Fixed SVG tracks prevent intrinsic SVG size from overlapping the SAN text. */
+.lcd-inline-line{grid-template-rows:minmax(0,1fr);align-items:stretch;min-height:0;overflow:hidden}
+.lcd-inline-half{height:100%;min-height:0;min-width:0;overflow:hidden}
+.lcd-inline-half .lcd-digits{height:100%;max-height:100%;min-height:0;overflow:hidden}
+.lcd-inline-score,.lcd-inline-primary,.lcd-inline-stats{min-width:0;min-height:0}
+#lcdPanel{padding:12px 12px}
+#lcdPanel #lcdEvaluation{height:48px}
+#lcdPanel #lcdMove{height:32px;margin:5px 0 0}
+#lcdPanel #lcdNotation{font-size:12px;line-height:1.4;margin:8px 0 4px;overflow-wrap:anywhere}
+#lcdPanel .lcd-label{font-size:11px;line-height:1.3}
+#lcdPanel #lcdState{font-size:10px;line-height:1.3}
+#lcdDepth{height:20px;width:48px}
+#lcdTime{height:15px;width:82px}
+@media(orientation:portrait) and (max-height:650px){#lcdPanel{padding:9px 10px}#lcdPanel #lcdEvaluation{height:44px}#lcdPanel #lcdMove{height:28px}#lcdPanel .lcd-label{font-size:10px}#lcdPanel #lcdNotation{font-size:11px}}
+@media(orientation:portrait) and (max-height:600px){.lcd-compact #subtitle{display:none}}
+@media(orientation:landscape) and (max-height:650px){
+ .lcd-compact main{max-width:none;padding:8px 12px}
+ .lcd-compact #playingHeader{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:center}
+ .lcd-compact #playingHeader header{grid-column:1/3;grid-row:1}
+ .lcd-compact #playingHeader #status{grid-column:1;grid-row:2;font-size:12px;margin:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .lcd-compact #playingHeader .lcd-toggle{grid-column:2;grid-row:2;font-size:12px;margin:3px 0}
+ .lcd-compact header .badge,.lcd-compact header #subtitle{display:none}
+ .lcd-compact header h1{font-size:20px}.lcd-compact header select{padding:5px}
+ .lcd-compact #playArea{display:grid;grid-template-columns:minmax(0,1fr) var(--board-side,45vw);grid-template-rows:minmax(0,1fr) auto;gap:8px 16px;height:var(--stage-height,70vh);align-items:start}
+ .lcd-compact #board{grid-column:2;grid-row:1/3;align-self:start}
+ .lcd-compact #lcdPanel{grid-column:1;grid-row:1;align-self:stretch;margin:0;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding:12px 14px}
+ .lcd-compact #lcdPanel .lcd-inline-primary{flex:1;align-items:center}
+ .lcd-compact #lcdPanel #lcdEvaluation{height:clamp(42px,13vmin,72px);max-height:100%;margin:3px 0}
+ .lcd-compact #lcdPanel #lcdMove{height:clamp(28px,9vmin,48px);flex:none}
+ .lcd-compact #lcdPanel #lcdNotation{flex:none}
+ .lcd-compact #lcdPanel #lcdState{flex:none}
+ .lcd-compact #replayControls{grid-column:1;grid-row:2;margin:0;min-width:0}
+ .lcd-compact #replaySlider{display:none}
+ .lcd-compact #replayState{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+/* Keep scrolling and import/cancel available independently of the image/editor. */
+.position-import[open]{width:min(calc(100vw - 32px),540px);height:calc(100dvh - 48px);max-height:calc(100dvh - 48px);padding:0;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.position-header{padding:10px 14px;border-bottom:1px solid #49616e;display:block}.position-header h2{margin:0;font-size:19px}
+.position-scroll{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding:0 14px 14px;touch-action:pan-y;scrollbar-gutter:stable}
+.position-actions{display:flex;gap:8px;padding:10px 14px;border-top:1px solid #49616e;background:#162b33}.position-actions button{flex:1;padding:8px;min-height:44px}
+.position-import #photoCanvas{width:min(100%,calc(32dvh * var(--photo-ratio,1)));max-width:100%;height:auto;display:block;margin:12px auto;touch-action:pan-y}
+.position-import #photoCanvas.editing{touch-action:none;outline:2px solid #edc36e;outline-offset:2px}
+.position-import #cropPreview{width:min(100%,200px);max-height:200px;height:auto;display:block;margin:12px auto;touch-action:pan-y}
+.position-import #positionBoard{max-width:min(100%,42dvh);margin:0 auto;touch-action:pan-y}.position-import .diagram-square{font-size:clamp(18px,5dvh,32px);touch-action:pan-y}
+@media(orientation:landscape) and (max-height:500px){.position-import[open]{width:min(calc(100vw - 40px),760px);height:calc(100dvh - 24px);max-height:calc(100dvh - 24px)}.position-header{padding:6px 12px}.position-actions{padding:6px 12px}.position-import #photoCanvas{width:min(100%,calc(42dvh * var(--photo-ratio,1)))}}
+#chatCard{margin-top:10px;padding:10px}#chat{position:relative;max-height:clamp(100px,16dvh,180px);overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:0 8px 0 0;touch-action:pan-y}.chat-item.current-position{background:#28453f;border-left:3px solid #a4e6c5;border-radius:6px;padding:10px}.chat-item.current-position small{color:#a4e6c5}
+/* Upcoming principal variation, separated full-move rows. */
+.lcd-compact #lcdPanel #lcdMove.lcd-inline-pv{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:4px;height:74px;max-width:none;flex:none}
+.lcd-inline-pv-row{display:grid;grid-template-columns:2.5ch minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,5vw,32px);min-height:0;align-items:center}
+.lcd-inline-number{font-size:11px;letter-spacing:0}
+
+/* Fixed normal LCD geometry: reserve three PV rows even for a shorter line. */
+#lcdLastMove{display:flex;align-items:center;gap:8px;height:24px;min-height:24px;min-width:0;font-size:10px}
+#lcdLastMoveLabel{flex:none}#lcdLastMoveValue{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+@media(orientation:portrait){
+ main,.lcd-compact main{max-width:none;padding-left:12px;padding-right:12px}
+ #board{max-width:100%!important}
+ .lcd-compact #lcdPanel{position:relative;height:270px;display:grid;grid-template-rows:70px 24px 20px 74px 26px 24px;gap:0;padding:12px;overflow:hidden}
+ .lcd-compact #lcdPanel #lcdMove{margin:0}
+ .lcd-compact #lcdPanel #lcdMoveLabel{margin:0;align-self:center}
+ .lcd-compact #lcdPanel #lcdNotation{margin:2px 0 0;line-height:1.1;font-size:11px;overflow:hidden}
+ .lcd-compact #lcdPanel #lcdState{margin:3px 0 0;overflow:hidden;line-height:1.2}
+ .lcd-compact #lcdPanel #lcdRetry{position:absolute;right:10px;bottom:6px;margin:0;padding:3px 6px;font-size:10px;min-height:24px}
+}
+@media(orientation:landscape) and (max-height:650px){
+ .lcd-compact #lcdPanel{overflow-y:auto}
+ .lcd-compact #lcdPanel .lcd-inline-primary{flex:0 0 auto}
+ .lcd-compact #lcdPanel #lcdMoveLabel,.lcd-compact #lcdPanel #lcdLastMove{flex:none}
+}
+#variationSelect{max-width:100%;flex:1;min-width:140px}#variationHelp{margin:4px 0}#gameAction{width:min(90vw,460px)}
+
+#modeControls{display:flex;align-items:center;gap:10px;margin:5px 0;grid-column:1/-1}#modeControls select{flex:1;min-width:0;padding:6px 12px;font-size:15px}#notationCard{margin-top:10px;padding:10px}#notation{max-height:180px;overflow-y:auto;touch-action:pan-y;line-height:2.5;overscroll-behavior:contain}#notation button{display:inline-block;min-height:34px;padding:3px 7px;margin:2px;font-size:15px;background:transparent;border:1px solid transparent}#notation .current-move{background:#28453f;border-color:#a4e6c5;color:#fff}#notation .notation-branch{color:#abc8bb}#notation .notation-branch button{color:inherit}.lcd-compact #playingHeader #modeControls{grid-row:3}
+</style><meta name="theme-color" content="#101c23"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SprachSchach"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="stylesheet" href="desktop.css"><link rel="stylesheet" href="pwa.css"></head><body><main><div id="playingHeader"><header><div><div class="badge">SPRACHSCHACH</div><h1 id="title">Dein Zug.</h1><small id="subtitle">Schach spielen. Züge verstehen.</small></div><select id="language" aria-label="Sprache"><option value="de">Deutsch</option><option value="en">English</option></select></header><div id="modeControls"><label id="modeLabel" for="appMode">Modus</label><select id="appMode"><option value="play">Spiel-Modus · gegen Stockfish</option><option value="analysis">Analyse-Modus · beide Seiten</option></select></div><div id="status" role="status"></div><label class="lcd-toggle"><input id="lcdEnabled" type="checkbox"> <span id="lcdToggleLabel">LCD-Anzeige für Zug und Bewertung</span></label></div><div id="playArea"><section id="lcdPanel" class="lcd-panel" hidden><div class="lcd-inline-primary"><div class="lcd-inline-score"><div id="lcdEvalLabel" class="lcd-label">STOCKFISH · WEISS</div><div id="lcdEvaluation" class="lcd-value" aria-live="polite"></div></div><div class="lcd-inline-stats"><div><span id="lcdDepthLabel">TIEFE</span><div id="lcdDepth"></div></div><div><span id="lcdTimeLabel">ZEIT</span><div id="lcdTime"></div></div></div></div><div id="lcdLastMove"><span id="lcdLastMoveLabel">LETZTER ZUG</span><span id="lcdLastMoveValue">Noch kein Zug</span></div><div id="lcdMoveLabel" class="lcd-label">NÄCHSTE 4 HALBZÜGE · WEISS / SCHWARZ</div><div id="lcdMove" class="lcd-value"></div><div id="lcdNotation" class="lcd-label"></div><div id="lcdState" class="lcd-small" role="status"></div><button id="lcdRetry" hidden>Erneut bewerten</button><div id="lcdTitle" hidden>SCHACHCOMPUTER</div><div id="lcdLegend" hidden>Bewertung: Weiß + / Schwarz − · Bauerneinheiten</div></section><div id="board" aria-label="Schachbrett"></div><section id="replayControls" class="card" hidden><small id="replayLabel">PARTIE DURCHGEHEN</small><div class="controls replay-arrows"><button id="replayStart" aria-label="Anfang">⏮</button><button id="replayPrev" aria-label="Vorheriger Zug">◀</button><button id="replayNext" aria-label="Nächster Zug">▶</button><button id="replayEnd" aria-label="Ende">⏭</button></div><input id="replaySlider" type="range" min="0" value="0" style="width:100%" aria-label="Zugposition"><p id="replayState" role="status"></p><button id="analyzeGame">Partie analysieren</button></section></div><section class="card" id="notationCard" hidden><small id="notationLabel">PGN · ZUM ZUG SPRINGEN</small><div id="notation" aria-label="Anklickbare PGN-Notation"></div></section><section class="card" id="chatCard"><small id="chatLabel">GESAMTER CHATVERLAUF</small><div id="chat" aria-label="Chatverlauf" tabindex="0"></div></section><section class="card" id="variationTools"><div class="controls"><select id="variationSelect" aria-label="Variante"></select><button id="variationNew">Variante ab hier</button><button id="variationMain">Hauptvariante</button><button id="variationDelete" hidden>Variante löschen</button></div><p id="variationHelp" class="hint"></p></section><div id="lcdTools" hidden><div class="lcd-buttons"><button id="lcdOpenFullscreen">LCD im Vollbild</button><button id="lcdOpenMinimal">LCD · nur Informationen</button></div><label><input id="lcdContinuous" type="checkbox"> <span id="lcdContinuousLabel">Daueranalyse</span></label></div><div class="controls"><button id="importPosition">📷 Stellung erkennen</button><button id="importImage">Screenshot / Bild laden</button><button id="importText">PGN / FEN importieren</button></div><p id="analysisHint" hidden></p><section class="card"><small id="voiceLabel">SPRACHGESPRÄCH</small><div class="speech-provider-row"><label id="speechProviderLabel" for="speechProvider">Sprachausgabe</label><select id="speechProvider"><option value="tts">Android-TTS · kostenlos</option><option value="openai">OpenAI · API-Kosten</option></select></div><p id="speechProviderHelp" class="hint">Android-TTS bevorzugt Google, wenn installiert. OpenAI verwendet deinen gespeicherten API-Schlüssel; die Nutzung wird separat berechnet.</p><p id="voiceStatus" role="status">Bereit.</p><label><input id="handsFree" type="checkbox" checked> <span id="handsFreeLabel">Freisprechen dauerhaft aktiv</span></label><div class="controls"><button id="openAi">OpenAI-Stimme einrichten</button><button id="stopAudio">Antwort stoppen</button></div><p class="hint">„Warum dieser Zug?“ · „Gib mir einen Tipp“ · „Freisprechen aus“<br>“Why this move?” · “Give me a hint” · “Stop listening”</p></section><div class="controls"><button id="mic">🎙 Zug sprechen</button><button id="undo">↶ Zurück</button></div><div class="controls"><button id="resign">Aufgeben</button><button id="offerDraw">Remis anbieten</button></div><div class="entry"><input id="entry" autocomplete="off" placeholder="Springer g1 nach f3" aria-label="Zug eingeben"><button id="submit">Ziehen</button></div><div id="message" role="alert"></div><div class="controls"><select id="level" aria-label="Spielstärke"><option value="1">Leicht</option><option value="2" selected>Mittel</option><option value="3">Schwer</option></select><select id="color" aria-label="Eigene Farbe"><option value="w">Ich spiele Weiß</option><option value="b">Ich spiele Schwarz</option></select><button id="new">Neue Partie</button></div><section class="card" id="engineSettings"><small id="engineSettingsTitle">STOCKFISH-EINSTELLUNGEN</small><div class="engine-options"><label><span id="engineHashLabel">Hash-Speicher</span><select id="engineHash" aria-label="Stockfish Hash-Speicher"><option value="1">1 MB</option><option value="8">8 MB</option><option value="16">16 MB</option><option value="32" selected>32 MB</option><option value="64">64 MB</option><option value="128">128 MB</option><option value="256">256 MB</option><option value="512">512 MB</option></select></label><label><span id="lcdAnalysisTimeLabel">Analysezeit pro Stellung</span><select id="lcdAnalysisTime" aria-label="Analysezeit pro Stellung"><option value="1">1 Sekunde</option><option value="4">4 Sekunden</option><option value="10">10 Sekunden</option><option value="infinite" selected>Unendlich</option></select></label></div><p id="engineSettingsHelp" class="hint"></p></section><section class="card"><small id="archiveLabel">GESPEICHERTE PARTIEN</small><div class="archive-controls"><select id="archive" aria-label="Gespeicherte Partie"></select><button id="loadGame">Partie öffnen</button><button id="saveGame">Partie speichern</button></div><p id="saveState" role="status"></p></section><section class="card"><small id="pgnLabel">PGN DER AKTUELLEN PARTIE</small><div class="controls"><button id="pgnSave">PGN speichern</button><button id="pgnShare">PGN teilen</button><button id="pgnCopy">PGN kopieren</button></div></section><label><input type="checkbox" id="audio" checked> <span id="audioLabel">Züge und Erklärungen vorlesen</span></label><section class="card"><small id="exLabel">ZUG & ERKLÄRUNG</small><p id="explanation">Willkommen! Du kannst Figuren antippen, einen Zug eingeben oder sprechen.</p><button id="repeat">▶ Noch einmal vorlesen</button></section><section class="card" id="summaryCard" hidden><small id="summaryLabel">HÖHEPUNKTE & GESAMTEINSCHÄTZUNG</small><p id="analysisState" role="status"></p><div id="summaryText"></div><div class="controls"><button id="summaryRead">▶ Zusammenfassung vorlesen</button><button id="reviewRetry">Analyse fortsetzen</button></div></section><p class="hint" id="help"></p><section class="card"><small id="historyLabel">ZUGVERLAUF</small><div id="history"></div></section><p class="footer" id="privacy"></p><dialog id="gameAction"><h3 id="actionTitle"></h3><p id="actionText"></p><label id="resignSideLabel"><span id="resignSideText">Aufgebende Seite</span> <select id="resignSide"><option value="w">Weiß</option><option value="b">Schwarz</option></select></label><div class="controls"><button id="actionConfirm">Bestätigen</button><button id="actionCancel">Abbrechen</button></div></dialog><dialog id="choose"><p id="chooseTitle"></p><div id="choices"></div><button id="cancel" style="margin-top:12px">Abbrechen</button></dialog><details class="footer"><summary>Stockfish · Open Source · GPLv3</summary><p>Stockfish.js 17.1 © 2025 Chess.com, LLC und Stockfish contributors. GPLv3. chess.js © Jeff Hlywa, BSD-2-Clause. Vollständige Lizenztexte: STOCKFISH-LICENSE.txt und CHESS-LICENSE.txt im App-Quellcode. Stockfish-Quellcode wird separat mit dieser iPad-Web-App bereitgestellt.</p></details></main><script type="module" src="browser.js"></script><script type="module" src="desktop.js"></script><script src="pwa.js"></script><script type="module" src="app.js"></script></body></html>
