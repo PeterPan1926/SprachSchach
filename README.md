@@ -12,7 +12,7 @@ Kein Mac, Xcode oder Apple-Entwicklerkonto notwendig. Diese Web-App wird über H
 
 ## Veröffentlichen ohne Mac – eigene Website
 
-ZIP zusammenfügen und auf einem Windows-PC entpacken. **Den Inhalt** von `SprachSchach-iPad-Web-1.1.1` auf die Website hochladen, z. B. in `/sprachschach/`; index.html muss dort direkt liegen. HTTPS aktivieren. Keine Dateien umbenennen: die sechs Stockfish-WASM-Teile müssen mit hochgeladen werden. MIME-Typen: .js text/javascript, .wasm application/wasm, .webmanifest application/manifest+json. Serverseitige API-Schlüssel sind nicht nötig. Für sw.js Cache-Control: no-cache verwenden. Relative Pfade unterstützen Unterordner.
+ZIP zusammenfügen und auf einem Windows-PC entpacken. **Den Inhalt** von `SprachSchach-iPad-Web-1.1.2` auf die Website hochladen, z. B. in `/sprachschach/`; index.html muss dort direkt liegen. HTTPS aktivieren. Keine Dateien umbenennen: die sechs Stockfish-WASM-Teile müssen mit hochgeladen werden. MIME-Typen: .js text/javascript, .wasm application/wasm, .webmanifest application/manifest+json. Serverseitige API-Schlüssel sind nicht nötig. Für sw.js Cache-Control: no-cache verwenden. Relative Pfade unterstützen Unterordner.
 
 ## GitHub Pages als Möglichkeit ohne eigenen Server
 
@@ -50,22 +50,22 @@ Sprachbefehle: „Analyse-Modus“ / „Spiel-Modus“, “analysis mode” / �
 
 ## Bestehende GitHub-Seite aktualisieren
 
-Deine Adresse bleibt https://peterpan1926.github.io/SprachSchach/ . Vorher in der App „Partien und Chat sichern“ wählen. Im GitHub-Repository den **Inhalt** von `SprachSchach-iPad-Web-1.1.1` in den Hauptordner hochladen und vorhandene Programmdateien ersetzen. `index.html`, `sw.js`, `variations.js` und `notation-view.js` müssen direkt im Hauptordner liegen, nicht in einem zusätzlichen Versionsordner. Die bisherigen Pages-Einstellungen bleiben bestehen. Keine Schlüssel oder Partiensicherungen ins Repository hochladen.
+Deine Adresse bleibt https://peterpan1926.github.io/SprachSchach/ . Vorher in der App „Partien und Chat sichern“ wählen. Im GitHub-Repository den **Inhalt** von `SprachSchach-iPad-Web-1.1.2` in den Hauptordner hochladen und vorhandene Programmdateien ersetzen. `index.html`, `sw.js`, `variations.js` und `notation-view.js` müssen direkt im Hauptordner liegen, nicht in einem zusätzlichen Versionsordner. Die bisherigen Pages-Einstellungen bleiben bestehen. Keine Schlüssel oder Partiensicherungen ins Repository hochladen.
 
 Nach abgeschlossenem GitHub-Pages-Build die bisherige Adresse in Safari öffnen. Die neue Offline-Version herunterladen lassen. Bei der Meldung „Neue Version bereit“ die Seite beziehungsweise die Home-Bildschirm-App schließen und erneut öffnen oder neu laden. Erst anschließend offline verwenden. Der Cache erhält eine neue Versionskennung; Archiv und verschlüsselte Schlüssel bleiben am selben Ursprung/Safari-Profil gespeichert. Websitedaten nicht löschen. Safari und eine Home-Bildschirm-Installation können getrennte Datenbestände verwenden.
 
 Die Downloaddateien wurden hier vorbereitet; deine GitHub-Seite wurde nicht verändert.
 
 
-## Safari-Version 1.1.1: klassische Figuren und Tablet-Querformat
+## Safari-Version 1.1.2: klassische Figuren und Tablet-Querformat
 
 Brett, Zusammenfassungsdiagramme, Bild-Kontrollbrett und Figurenpalette verwenden eigene klassische SVG-Figuren (GPLv3). Weiß ist ausdrücklich elfenbeinfarben mit dunkler Kontur, Schwarz anthrazitfarben. Keine Emoji- oder Schriftabhängigkeit; Bauern haben einen kleineren Kopf und Sockel und sind niedriger als König/Dame. Alle Figuren passen in einheitliche feldbezogene Grafikboxen.
 
 Im Querformat stehen Brett und Navigation links, LCD/anklickbare PGN/Chat rechts. Die Brettgröße wird durch die verfügbare Höhe begrenzt und berücksichtigt die Navigationspfeile. LCD und die rechten Lesefenster passen sich an; bei sehr kleinen Querformaten ist die rechte Spalte scrollbar. Die ganze Seite lässt sich weiterhin auch über dem Brett scrollen, sodass die weiteren Bedienelemente erreichbar bleiben. Im Hochformat bleibt das Brett breit; die Reihenfolge ist LCD, Brett, Navigation, PGN, Chat. Vollbild bleibt auf die ausdrücklich gewählte LCD-Vollbildansicht beschränkt.
 
-Für das bestehende Repository reicht das **kleine Update-ZIP mit allen Webdateien außer WASM**: entpacken und sämtliche enthaltenen Dateien direkt im Repository-Hauptordner ersetzen/ergänzen. Die sechs unveränderten Stockfish-WASM-Dateien müssen bereits dort liegen. Der vollständige Download 1.1.1 enthält sie weiterhin. Nach Pages-Veröffentlichung Seite mit Internet öffnen, neue Offline-Dateien fertig laden lassen und bei „Neue Version bereit“ neu laden. Websitedaten nicht löschen; vorher Archiv/Chat sichern. Die Versionszeile unten zeigt 1.1.1.
+Für das bestehende Repository reicht das **kleine Update-ZIP mit allen Webdateien außer WASM**: entpacken und sämtliche enthaltenen Dateien direkt im Repository-Hauptordner ersetzen/ergänzen. Die sechs unveränderten Stockfish-WASM-Dateien müssen bereits dort liegen. Der vollständige Download 1.1.2 enthält sie weiterhin. Nach Pages-Veröffentlichung Seite mit Internet öffnen, neue Offline-Dateien fertig laden lassen und bei „Neue Version bereit“ neu laden. Websitedaten nicht löschen; vorher Archiv/Chat sichern. Die Versionszeile unten zeigt 1.1.2.
 
-Prüfung in Chromium: explizite Figurenfarben/-proportionen, Feldgrenzen, Zug/Replays mit SVG, Bilderkennungs-Kontrollbrett/Palette, Tablet-Hoch-/Querformat mit und ohne LCD, Scrollen über dem Brett, Modus/Varianten/PGN mit vollständigem Stockfish und Offline-Neustart. Update von 1.1.0 auf 1.1.1 erhält Archiv/Chat und verschlüsselte Schlüssel. Ein tatsächlicher Safari-/iPad-Gerätetest ist hier nicht möglich. Die vorhandene GitHub-Seite wurde hier nicht verändert.
+Prüfung in Chromium: explizite Figurenfarben/-proportionen, Feldgrenzen, Zug/Replays mit SVG, Bilderkennungs-Kontrollbrett/Palette, Tablet-Hoch-/Querformat mit und ohne LCD, Scrollen über dem Brett, Modus/Varianten/PGN mit vollständigem Stockfish und Offline-Neustart. Update von 1.1.0 auf 1.1.2 erhält Archiv/Chat und verschlüsselte Schlüssel. Ein tatsächlicher Safari-/iPad-Gerätetest ist hier nicht möglich. Die vorhandene GitHub-Seite wurde hier nicht verändert.
 
 
 ### Alternative LCD-Ansicht mit MultiPV
@@ -75,3 +75,7 @@ Unter den LCD-Bedienelementen kann **1, 2 oder 3 Hauptvarianten** gewählt werde
 „LCD im Vollbild“ und „LCD · nur Informationen“ öffnen bei 2/3 Hauptvarianten die entsprechende große Variantenansicht. Im Querformat stehen die Varianten nebeneinander, im Hochformat untereinander. Das X bzw. Escape schließt sie. Im normalen Tablet-Querformat vergrößern eine kompakte Kopfzeile und eine höhenabhängige LCD-Größe zugleich Brett und LCD-Zeichen; Pfeile, PGN und Chat bleiben erreichbar.
 
 Stockfish erhält das tatsächliche UCI-MultiPV-Kommando, kein mehrfacher Einzelzug-Tipp. Nur zusammengehörige Varianten derselben Rechentiefe werden gemeinsam übernommen. Vor einem Spielzug/Coach-Auftrag wird MultiPV wieder auf 1 gestellt. Normale Partieauswertung und beste Bewertung werden nicht mit einem Nebenvariantenscore überschrieben. Die reale Engine-Prüfung kontrolliert separate Weiß-Bewertungen einschließlich Schwarz-am-Zug, vier legale Halbzüge, unterschiedliche Erstzüge, gemeinsame Tiefe, Vollbild/Neustart und Rückkehr zum Spiel/Einzelmodus.
+
+## Merida-Figuren (1.1.2)
+
+Brett, Stellungsdiagramme und Import-Kontrollbrett verwenden den originalen Merida-SVG-Figurensatz von Armando Hernandez Marroquin (GPLv2 oder neuer). Weiße Figuren bleiben weiß; Bauern sind etwas kleiner als die übrigen Figuren. Quellen und Lizenzhinweise: MERIDA-NOTICE.txt und THIRD-PARTY-NOTICES.md. Die Figuren werden lokal mitgeliefert und sind nach der Offline-Installation ohne Internet verfügbar.

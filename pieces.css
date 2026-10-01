@@ -4,3 +4,5 @@
 .classic-piece{position:absolute;inset:7%;width:86%;height:86%;display:block;pointer-events:none;filter:drop-shadow(0 1px 1px #0003)}
 .piece-palette button{height:44px}
 #board .square{touch-action:manipulation;overflow:hidden}
+
+.classic-piece[data-type=p]{inset:10%;width:80%;height:80%}

@@ -1,0 +1,9 @@
+Merida chess pieces
+Copyright: Armando Hernandez Marroquin
+License: GNU General Public License, version 2 or later (GPL-2.0-or-later).
+Distributed with this GPL-3.0 application; see LICENSE.
+Source: https://github.com/lichess-org/lila/tree/b150e39fad24e4a2d4764cc3bab2ec7f186ae8aa/public/piece/merida
+Upstream license attribution: COPYING.md in that revision.
+Original SVG files: ipad-web/merida/ in the accompanying application source.
+merida.js bundles those SVG files without changing their artwork.
+Rendering gives gradient IDs unique names and sizes pawns slightly smaller.
