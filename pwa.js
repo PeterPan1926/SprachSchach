@@ -1,6 +1,9 @@
+import {setupMultiPv} from './multipv.js';
+import {prepareTabletLayout} from './tablet-layout.js';
 // Home-screen installation and offline readiness are reported separately.
 window.addEventListener('DOMContentLoaded',()=>{
- const card=document.createElement('section');card.className='card pwa-card';card.innerHTML='<small>IPAD · SAFARI / HOME-BILDSCHIRM · 1.1.0</small><p>Safari: Teilen → Zum Home-Bildschirm. Zum ersten Sprachstart „Zug sprechen“ antippen und Mikrofon freigeben. Die App hört nur im Vordergrund zu.</p><p id="offlineStatus" role="status">Offline-Dateien werden vorbereitet …</p><button id="pwaReload" hidden>Neue Version öffnen</button>';
+ prepareTabletLayout();setupMultiPv();
+ const card=document.createElement('section');card.className='card pwa-card';card.innerHTML='<small>IPAD · SAFARI / HOME-BILDSCHIRM · 1.1.1</small><p>Safari: Teilen → Zum Home-Bildschirm. Zum ersten Sprachstart „Zug sprechen“ antippen und Mikrofon freigeben. Die App hört nur im Vordergrund zu.</p><p id="offlineStatus" role="status">Offline-Dateien werden vorbereitet …</p><button id="pwaReload" hidden>Neue Version öffnen</button>';
  document.querySelector('main').append(card);const status=document.getElementById('offlineStatus'),hadController=!!navigator.serviceWorker?.controller;document.getElementById('pwaReload').onclick=()=>location.reload();
  document.getElementById('mic').addEventListener('click',()=>{window.pwaSpeechStarted=true;},{capture:true});document.getElementById('handsFree').addEventListener('change',e=>{if(e.target.checked)window.pwaSpeechStarted=true;},{capture:true});
  if(!('serviceWorker' in navigator)||!window.isSecureContext){status.textContent='Offline-Nutzung und Home-Bildschirm benötigen eine HTTPS-Adresse. Diese Dateien nicht direkt aus der Dateien-App öffnen.';return;}

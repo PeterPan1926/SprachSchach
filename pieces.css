@@ -1,0 +1,6 @@
+/* Vectors have a fixed field-relative box, including pawns. */
+#board{grid-template-columns:repeat(8,minmax(0,1fr));grid-template-rows:repeat(8,minmax(0,1fr))}
+.square,.diagram-square,.piece-palette button{position:relative;min-width:0;min-height:0;text-shadow:none!important}
+.classic-piece{position:absolute;inset:7%;width:86%;height:86%;display:block;pointer-events:none;filter:drop-shadow(0 1px 1px #0003)}
+.piece-palette button{height:44px}
+#board .square{touch-action:manipulation;overflow:hidden}

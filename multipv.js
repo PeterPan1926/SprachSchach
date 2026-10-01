@@ -1,0 +1,25 @@
+import {lcdScore,lcdTime,lcdVariation,lcdMoveLines,renderLcdText} from './lcd.js';
+const $=id=>document.getElementById(id);
+let latest=null,full=null;
+export function multiPvCount(){try{return [2,3].includes(Number(localStorage.getItem('sprachschach-ipad-multipv')))?Number(localStorage.getItem('sprachschach-ipad-multipv')):1;}catch{return 1;}}
+function groups(container,fen,evaluation,count,lang){container.replaceChildren();const values=evaluation?.variations||(evaluation?[evaluation]:[]);for(let i=0;i<count;i++){
+ const e=values[i],group=document.createElement('div');group.className='multipv-group';group.dataset.rank=i+1;group.dataset.depth=e?.depth||'';
+ const score=document.createElement('div');score.className='multipv-score';const rank=document.createElement('small');rank.textContent=(lang==='de'?'VARIANTE ':'LINE ')+(i+1);const value=document.createElement('div');value.className='multipv-score-value';renderLcdText(value,lcdScore(e),(lang==='de'?'Bewertung Weiß: ':'White score: ')+lcdScore(e));score.append(rank,value);
+ const moves=lcdVariation(fen,e,4),rows=lcdMoveLines(moves),pv=document.createElement('div');pv.className='multipv-moves';pv.dataset.uci=moves.map(m=>m.uci).join(' ');for(let n=0;n<3;n++){const row=document.createElement('div');row.className='multipv-row';const number=document.createElement('small');number.textContent=rows[n]?.number?rows[n].number+'.':'';row.append(number);for(const side of ['white','black']){const m=rows[n]?.[side],cell=document.createElement('div');cell.className='multipv-half';if(m)cell.dataset.uci=m.uci;renderLcdText(cell,m?.text||' ',m?.san||'');row.append(cell);}pv.append(row);}group.append(score,pv);container.append(group);
+}}
+export function renderMultiPv(fen,evaluation,lang='de'){
+ latest={fen,evaluation,lang};if($('lcdPvCount'))for(const [i,o]of [...$('lcdPvCount').options].entries())o.textContent=(i+1)+(lang==='de'?(i?' Hauptvarianten':' Hauptvariante'):(i?' main lines':' main line'));const count=multiPvCount(),panel=$('lcdPanel');panel.classList.toggle('multipv-active',count>1);
+ if(!$('lcdMultiPv')){const box=document.createElement('div');box.id='lcdMultiPv';panel.insertBefore(box,$('lcdState'));const metrics=document.createElement('div');metrics.id='lcdMultiMetrics';panel.prepend(metrics);}
+ const active=count>1;for(const el of [panel.querySelector('.lcd-inline-primary'),$('lcdMove'),$('lcdNotation')])el.hidden=active;$('lcdMultiPv').hidden=$('lcdMultiMetrics').hidden=!active;
+ if(active){const top=evaluation?.variations?.[0]||evaluation;$('lcdMultiMetrics').textContent=(lang==='de'?'STOCKFISH · WEISS · TIEFE ':'STOCKFISH · WHITE · DEPTH ')+(top?.depth??'--')+' · '+lcdTime(top);$('lcdMoveLabel').textContent=count+(lang==='de'?' HAUPTVARIANTEN · JE 4 HALBZÜGE':' MAIN LINES · 4 HALF-MOVES EACH');groups($('lcdMultiPv'),fen,evaluation,count,lang);}
+ if(full){full.querySelector('.multipv-full-metrics').textContent=$('lcdMultiMetrics').textContent;groups(full.querySelector('.multipv-full-groups'),fen,evaluation,count,lang);full.style.setProperty('--multipv-count',count);}
+}
+function close(){if(!full)return;full.remove();full=null;document.body.classList.remove('lcd-is-fullscreen');}
+function open(){if(!latest)return;close();full=document.createElement('section');full.className='multipv-fullscreen';full.setAttribute('role','dialog');full.setAttribute('aria-modal','true');full.setAttribute('aria-label',latest.lang==='de'?'LCD Hauptvarianten':'LCD main lines');const header=document.createElement('header'),title=document.createElement('small');title.className='multipv-full-metrics';const x=document.createElement('button');x.id='multiPvClose';x.textContent='×';x.setAttribute('aria-label',latest.lang==='de'?'Vollbild schließen':'Close fullscreen');x.onclick=close;header.append(title,x);const content=document.createElement('div');content.className='multipv-full-groups';full.append(header,content);document.body.append(full);document.body.classList.add('lcd-is-fullscreen');renderMultiPv(latest.fen,latest.evaluation,latest.lang);x.focus();}
+export function setupMultiPv(){
+ const label=document.createElement('label');label.className='multipv-choice';label.textContent='LCD: ';const select=document.createElement('select');select.id='lcdPvCount';select.setAttribute('aria-label','LCD Hauptvarianten / Main lines');for(const n of [1,2,3]){const option=document.createElement('option');option.value=n;option.textContent=n+(n===1?' Hauptvariante':' Hauptvarianten');select.append(option);}select.value=multiPvCount();label.append(select);$('lcdTools').prepend(label);
+ select.onchange=()=>{try{localStorage.setItem('sprachschach-ipad-multipv',select.value);}catch{}window.refreshMultiPv?.();};
+ for(const id of ['lcdOpenFullscreen','lcdOpenMinimal'])$(id).addEventListener('click',e=>{if(multiPvCount()>1){e.preventDefault();e.stopImmediatePropagation();open();}},{capture:true});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&full){e.preventDefault();close();}});
+ $('lcdEnabled').addEventListener('change',()=>{if(!$('lcdEnabled').checked)close();});
+}
