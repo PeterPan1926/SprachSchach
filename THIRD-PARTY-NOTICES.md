@@ -13,7 +13,7 @@ Copyright (c) 2025 Jeff Hlywa.
 BSD-2-Clause: see app/src/main/assets/CHESS-LICENSE.txt.
 https://github.com/jhlywa/chess.js
 
-## Merida chess pieces (Safari/iPad Web)
+## Merida chess pieces (Android and Safari/iPad Web)
 Merida chess pieces
 Copyright: Armando Hernandez Marroquin
 License: GNU General Public License, version 2 or later (GPL-2.0-or-later).

@@ -1,5 +1,5 @@
-import {multiPvCount,renderMultiPv} from './multipv.js';
 import {fitTabletLayout} from './tablet-layout.js';
+import {multiPvCount,renderMultiPv,setupMultiPv} from './multipv.js';
 import {renderPiece} from './pieces.js';
 import {Chess,parseMove,explain,names,spokenText,meaningfulText} from './core.js';
 import {archiveKey,newSession,migrateLegacy,restoreGame,moveObject,uci,terminalEvaluation,resultText,buildSummary,buildSummaryParts,hydrateSummaryParts} from './review.js';
@@ -156,6 +156,7 @@ hydrateSummaryParts(session);
 if(session.activeVariationId){activeVariation=session.activeVariationId;game=variationGame(session,activeVariation);ensureVariantChat();}
 replayCursor=Number.isInteger(session.replayPly)?Math.max(0,Math.min(game.history().length,session.replayPly)):null;
 {const last=viewedGame().history({verbose:true}).at(-1);if(last)lastText=explain(last,game,lang);}
+setupMultiPv();
 if(!session.chat.length)chat('system',t('Willkommen! Deine Partien und der gesamte Chat werden automatisch auf diesem Gerät gespeichert.','Welcome! Your games and full conversations are automatically saved on this device.'));localize();syncVoice();save();if(!activeVariation&&!browsing()&&gameEnded())void reviewGame();else if(!browsing())void computer();
 
 window.refreshMultiPv=()=>{cancelLcd();renderLcd();};
