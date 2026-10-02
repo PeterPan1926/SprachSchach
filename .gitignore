@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.emulator-token
+bridge/roms/
+test-results/

@@ -1,0 +1,6 @@
+.opponent-options{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.opponent-options label{display:flex;gap:.4rem;align-items:center}
+#emulatorSettings label{display:block;margin:.65rem 0}
+#emulatorUrl{width:100%;box-sizing:border-box;max-width:100%}
+#emulatorToken{max-width:100%;box-sizing:border-box}
+#emulatorStatus{overflow-wrap:anywhere}

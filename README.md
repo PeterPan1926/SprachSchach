@@ -1,3 +1,7 @@
+## Emulierte Schachcomputer (1.1.6)
+
+Mephisto MM VI ist als Gegner integriert: normales Brett, automatisches Archiv und PGN-Export. Die Web-App verbindet sich mit einem MAME-Dienst auf PC/Server. Installation, Android/iPad-Verbindung und Grenzen: [EMULATION.md](EMULATION.md).
+
 # SprachSchach für iPad – Safari und Home-Bildschirm
 
 Kein Mac, Xcode oder Apple-Entwicklerkonto notwendig. Diese Web-App wird über HTTPS veröffentlicht und auf dem iPad in Safari geöffnet. Das lokale Öffnen aus der Dateien-App oder ein ZIP-Link reicht nicht: JavaScript-Module, Worker und Offline-Installation benötigen eine Website. Ein öffentlicher Host ist nicht Teil dieses Downloads. Empfohlen: aktuelles iPadOS, mindestens 17.

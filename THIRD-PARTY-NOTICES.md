@@ -1,5 +1,16 @@
 # Third-party notices
 
+## MessNew chessengine adapter
+
+`bridge/plugins/chessengine/` derives from the user-provided MessNew package,
+downloaded from https://fhub.jimdofree.com/?mobile=0.
+The original plugin identifies Sandro Ronco and Franz Huber as authors and
+declares the BSD 3-Clause License. License text: `bridge/plugins/chessengine/LICENSE`.
+This version updates MAME 0.289 output access, initial interface loading,
+coroutine error reporting and MM VI startup/input timing. Only the MM VI
+interface is included and enabled. MAME, ROMs and device artwork are supplied
+separately and are not part of this update.
+
 ## Stockfish.js 17.1 Full Single Thread
 Copyright (c) 2025 Chess.com, LLC and Stockfish contributors.
 GPLv3: see LICENSE and app/src/main/assets/STOCKFISH-LICENSE.txt.
