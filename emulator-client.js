@@ -95,11 +95,15 @@ export class EmulatorClient{
 }
 export function emulatorErrorText(error,lang='de'){
  const texts={
+  local_emulator_unavailable:['Der lokale MM-VI-Kern ist auf diesem Gerät nicht verfügbar.','The local MM VI engine is unavailable on this device.'],
+  local_emulator_failed:['Die lokale MM-VI-Emulation konnte nicht starten. Tippe zum erneuten Versuch.','The local MM VI emulator could not start. Tap to retry.'],
+  polgar_history_unavailable:['Für diese Polgar-Zugfolge fehlt der native Modul-Spielstand. Eine neue Partie starten oder einen gespeicherten Spielstand im Originalmodul laden. Externe PGN-Partien weiterhin mit Stockfish analysieren.','No native Polgar state exists for this move sequence. Start a new game or load a saved state in the original module. Analyze external PGN games with Stockfish.'],
+  emulator_interface_error:['Die lokale Emulator-Anbindung wurde unterbrochen. Bitte erneut versuchen.','The local emulator interface was interrupted. Please retry.'],
   bridge_not_configured:['Bitte die Adresse des Emulator-Dienstes eintragen.','Enter the emulator service address.'],
   invalid_bridge_url:['Die Adresse muss mit ws:// oder wss:// beginnen.','The address must start with ws:// or wss://.'],
   secure_bridge_required:['Diese HTTPS-Seite benötigt eine verschlüsselte wss://-Verbindung.','This HTTPS page requires an encrypted wss:// connection.'],
   unauthorized:['Der Verbindungscode stimmt nicht.','The connection code is incorrect.'],
-  start_position_required:['MM VI unterstützt hier Partien aus der Grundstellung. Importierte Einzelstellungen können weiterhin mit Stockfish gespielt werden.','MM VI supports games from the starting position here. Imported positions can still be played with Stockfish.'],
+  start_position_required:['Die Mephisto-Module unterstützen hier Partien aus der Grundstellung. Importierte Einzelstellungen können weiterhin mit Stockfish gespielt werden.','The Mephisto modules support games from the starting position here. Imported positions can still be played with Stockfish.'],
   bridge_busy:['Der Emulator-Dienst ist belegt. Bitte später erneut versuchen.','The emulator service is busy. Try again later.'],
   emulator_timeout:['Der emulierte Computer hat nicht rechtzeitig geantwortet. Stufe oder Verbindung prüfen.','The emulated computer did not reply in time. Check its level or connection.'],
   emulator_unavailable:['MAME konnte auf dem Emulator-Dienst nicht starten.','MAME could not start on the emulator service.'],

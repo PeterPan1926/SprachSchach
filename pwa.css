@@ -64,3 +64,8 @@ body.desktop.ipad-ready.ipad-landscape #playArea{grid-template-columns:var(--ipa
  .ipad-landscape #lcdPanel #lcdEvaluation{height:76px!important}
  .ipad-landscape #lcdPanel #lcdMove.lcd-inline-pv{height:116px!important;min-height:116px}
 }
+
+/* Keep the physical backdrop around the board when reflowing the tablet view. */
+.ipad-ready #boardStage{grid-column:1!important;grid-row:2!important;width:100%;min-width:0}
+body.desktop.ipad-ready #boardStage.mephisto-surface #board{width:var(--surface-width)!important;height:var(--surface-height)!important;aspect-ratio:auto!important}
+body.desktop.ipad-ready #boardStage.mephisto-surface{max-width:100%!important}

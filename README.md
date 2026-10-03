@@ -1,6 +1,36 @@
-## Emulierte Schachcomputer (1.1.6)
+# Web-App 1.2.0 – Mephisto-Module lokal
 
-Mephisto MM VI ist als Gegner integriert: normales Brett, automatisches Archiv und PGN-Export. Die Web-App verbindet sich mit einem MAME-Dienst auf PC/Server. Installation, Android/iPad-Verbindung und Grenzen: [EMULATION.md](EMULATION.md).
+Neu gegenüber Web 1.1.5: MM VI, Vancouver 32 Bit und Polgar 10 MHz (10.1)
+lokal über WebAssembly; Originalansichten samt korrektem LCD, Feld-LEDs,
+Originaltasten und Polgar-/Vancouver-Fotos aus Android 1.33. Vollständige
+Modul-Spielstände können benannt gespeichert und später geladen werden.
+Brett, Partienspeicherung, Chat, Spiel-/Analysemodus, Varianten, PGN und
+Sprachoptionen stammen aus dem aktuellen gemeinsamen Android-Code.
+
+Zum Spielen das Modul unter Gegner auswählen. Original-Artwork und
+Original-Modul öffnen zeigen die Firmware-Tasten und das Sensorbrett.
+Computerzüge im Originalmodul selbst anhand der roten LEDs ausführen.
+Modul-Spielstände speichert den vollständigen Zustand einschließlich
+aufgenommener Figuren; die originale SAVE-Taste behält ihre ROM-Funktion.
+Stockfish bleibt für Analysen und als Gegner verfügbar.
+
+Für GitHub Pages den Inhalt des entpackten Web-Ordners in den Hauptordner
+des bestehenden Repositorys SprachSchach hochladen. index.html, sw.js und
+alle Unterordner müssen direkt dort liegen. ZIP-Dateien nicht hochladen.
+Das Update-Paket ersetzt Webdateien und enthält die neue Mephisto-Engine;
+es lässt die unveränderten Stockfish-WASM-Teile aus. Diese auf GitHub behalten.
+Die einzelnen Mephisto-Teile sind kleiner als die GitHub-Browser-Uploadgrenze.
+Nach Veröffentlichung mit Internet öffnen, Offline-Download fertigstellen
+und neu laden. Website-Adresse und Browserprofil beibehalten, Website-Daten
+nicht löschen. Vor dem Update Partien und Chat über die vorhandene Sicherung
+exportieren.
+
+Die App läuft unter HTTPS in Safari sowie Chrome/Edge unter Windows. Safari:
+Teilen → Zum Home-Bildschirm. Spracherkennung/Kamera und KI-Aufrufe bleiben
+von Browserberechtigungen beziehungsweise API-Zugang abhängig.
+
+Details zur Emulation und ihrem Build stehen in native/web/README.md im
+Quellcode. Die folgenden Abschnitte dokumentieren die bisherige Web-Version.
 
 # SprachSchach für iPad – Safari und Home-Bildschirm
 

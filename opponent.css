@@ -4,3 +4,6 @@
 #emulatorUrl{width:100%;box-sizing:border-box;max-width:100%}
 #emulatorToken{max-width:100%;box-sizing:border-box}
 #emulatorStatus{overflow-wrap:anywhere}
+
+.opponent-options label{flex-wrap:wrap;max-width:100%}
+#opponent{max-width:100%}
