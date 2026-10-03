@@ -1,0 +1,1178 @@
+<?xml version="1.0"?>
+<mamelayout version="2">
+	<element name="xmephisto">
+		<image file="van32.png" />
+	</element>
+
+	<element name="xpiece" defstate="0">
+		<image file="..\Pieces\BP.png" state="1"/>
+		<image file="..\Pieces\BKN.png" state="2"/>
+		<image file="..\Pieces\BB.png" state="3"/>
+		<image file="..\Pieces\BR.png" state="4"/>
+		<image file="..\Pieces\BQ.png" state="5"/>
+		<image file="..\Pieces\BK.png" state="6"/>
+		<image file="..\Pieces\WP.png" state="7"/>
+		<image file="..\Pieces\WKN.png" state="8"/>
+		<image file="..\Pieces\WB.png" state="9"/>
+		<image file="..\Pieces\WR.png" state="10"/>
+		<image file="..\Pieces\WQ.png" state="11"/>
+		<image file="..\Pieces\WK.png" state="12"/>
+		<image file="..\Pieces\BP_SEL.png" state="13"/>
+		<image file="..\Pieces\BKN_SEL.png" state="14"/>
+		<image file="..\Pieces\BB_SEL.png" state="15"/>
+		<image file="..\Pieces\BR_SEL.png" state="16"/>
+		<image file="..\Pieces\BQ_SEL.png" state="17"/>
+		<image file="..\Pieces\BK_SEL.png" state="18"/>
+		<image file="..\Pieces\WP_SEL.png" state="19"/>
+		<image file="..\Pieces\WKN_SEL.png" state="20"/>
+		<image file="..\Pieces\WB_SEL.png" state="21"/>
+		<image file="..\Pieces\WR_SEL.png" state="22"/>
+		<image file="..\Pieces\WQ_SEL.png" state="23"/>
+		<image file="..\Pieces\WK_SEL.png" state="24"/>
+	</element>
+
+	<element name="xclearboard" defstate="0">
+		<image file="clearboard.png" state="0"/>
+                <image file="clearboard_sel.png" state="1"/>
+	</element>
+	<element name="xstartpos" defstate="0">
+		<image file="startpos.png" state="0"/>
+                <image file="startpos_sel.png" state="1"/>
+	</element>
+	<element name="xturnboard" defstate="0">
+		<image file="turnboard.png" state="0"/>
+                <image file="turnboard_sel.png" state="1"/>
+	</element>
+
+
+	<element name="xdigit" defstate="0">
+		<led7seg>
+			<color red="0.75" green="0.0" blue="0.0" />
+		</led7seg>
+	</element>
+	<element name="xled" defstate="0">
+		<disk state="1">
+			<color red="1.0" green="0.0" blue="0.0" />
+		</disk>
+		<disk state="0">
+			<color red="0.50" green="0.50" blue="0.50" />
+		</disk>
+	</element>
+	<element name="xbackground">
+		<rect>
+			<bounds left="0" top="0" right="1" bottom="1" />
+			<color red="1.0" green="1.0" blue="1.0" />
+		</rect>
+	</element>
+
+
+	<element name="xbutton" defstate="0"></element>
+
+
+	<element name="xkeys" defstate="0">
+ 		<rect state="1">
+      			<color red="0.0" green="0.0" blue="0.0" />
+		</rect>
+	</element>
+
+
+	<element name="xbutton_border_pieces" defstate="0">
+ 
+	</element>
+
+
+	<element name="xborder_buttons" defstate="0">
+ 		<rect state="1">
+      			<color red="1.0" green="1.0" blue="1.0"/>
+		</rect>
+	</element>
+
+
+
+	<view name="Realistic Artwork">
+
+
+            <!-- Board -->
+
+
+
+		<backdrop element="xmephisto">
+			<bounds x="0" y="0" width="530" height="660" />
+		</backdrop>
+
+
+		<screen index="0"><bounds  x="197" y="577.6" width="113" height="26" /></screen>
+
+
+		<!-- Pieces -->
+		<bezel name="P0" element="xpiece"><bounds x="46" y="43" width="42" height="48" /></bezel>
+		<bezel name="P1" element="xpiece"><bounds x="101" y="43" width="42" height="48" /></bezel>
+		<bezel name="P2" element="xpiece"><bounds x="157" y="43" width="42" height="48" /></bezel>
+		<bezel name="P3" element="xpiece"><bounds x="215" y="43" width="42" height="48" /></bezel>
+		<bezel name="P4" element="xpiece"><bounds x="271" y="43" width="42" height="48" /></bezel>
+		<bezel name="P5" element="xpiece"><bounds x="324" y="43" width="42" height="48" /></bezel>
+		<bezel name="P6" element="xpiece"><bounds x="380" y="43" width="42" height="48" /></bezel>
+		<bezel name="P7" element="xpiece"><bounds x="437" y="43" width="42" height="48" /></bezel>
+		<bezel name="P8" element="xpiece"><bounds x="46" y="100" width="42" height="48" /></bezel>
+		<bezel name="P9" element="xpiece"><bounds x="101" y="100" width="42" height="48" /></bezel>
+		<bezel name="P10" element="xpiece"><bounds x="157" y="100" width="42" height="48" /></bezel>
+		<bezel name="P11" element="xpiece"><bounds x="215" y="100" width="42" height="48" /></bezel>
+		<bezel name="P12" element="xpiece"><bounds x="271" y="100" width="42" height="48" /></bezel>
+		<bezel name="P13" element="xpiece"><bounds x="324" y="100" width="42" height="48" /></bezel>
+		<bezel name="P14" element="xpiece"><bounds x="380" y="100" width="42" height="48" /></bezel>
+		<bezel name="P15" element="xpiece"><bounds x="437" y="100" width="42" height="48" /></bezel>
+		<bezel name="P16" element="xpiece"><bounds x="46" y="155" width="42" height="48" /></bezel>
+		<bezel name="P17" element="xpiece"><bounds x="101" y="155" width="42" height="48" /></bezel>
+		<bezel name="P18" element="xpiece"><bounds x="157" y="155" width="42" height="48" /></bezel>
+		<bezel name="P19" element="xpiece"><bounds x="215" y="155" width="42" height="48" /></bezel>
+		<bezel name="P20" element="xpiece"><bounds x="271" y="155" width="42" height="48" /></bezel>
+		<bezel name="P21" element="xpiece"><bounds x="324" y="155" width="42" height="48" /></bezel>
+		<bezel name="P22" element="xpiece"><bounds x="380" y="155" width="42" height="48" /></bezel>
+		<bezel name="P23" element="xpiece"><bounds x="437" y="155" width="42" height="48" /></bezel>
+		<bezel name="P24" element="xpiece"><bounds x="46" y="211" width="42" height="48" /></bezel>
+		<bezel name="P25" element="xpiece"><bounds x="101" y="211" width="42" height="48" /></bezel>
+		<bezel name="P26" element="xpiece"><bounds x="157" y="211" width="42" height="48" /></bezel>
+		<bezel name="P27" element="xpiece"><bounds x="215" y="211" width="42" height="48" /></bezel>
+		<bezel name="P28" element="xpiece"><bounds x="271" y="211" width="42" height="48" /></bezel>
+		<bezel name="P29" element="xpiece"><bounds x="324" y="211" width="42" height="48" /></bezel>
+		<bezel name="P30" element="xpiece"><bounds x="380" y="211" width="42" height="48" /></bezel>
+		<bezel name="P31" element="xpiece"><bounds x="437" y="211" width="42" height="48" /></bezel>
+		<bezel name="P32" element="xpiece"><bounds x="46" y="267" width="42" height="48" /></bezel>
+		<bezel name="P33" element="xpiece"><bounds x="101" y="267" width="42" height="48" /></bezel>
+		<bezel name="P34" element="xpiece"><bounds x="157" y="267" width="42" height="48" /></bezel>
+		<bezel name="P35" element="xpiece"><bounds x="215" y="267" width="42" height="48" /></bezel>
+		<bezel name="P36" element="xpiece"><bounds x="271" y="267" width="42" height="48" /></bezel>
+		<bezel name="P37" element="xpiece"><bounds x="324" y="267" width="42" height="48" /></bezel>
+		<bezel name="P38" element="xpiece"><bounds x="380" y="267" width="42" height="48" /></bezel>
+		<bezel name="P39" element="xpiece"><bounds x="437" y="267" width="42" height="48" /></bezel>
+		<bezel name="P40" element="xpiece"><bounds x="46" y="322" width="42" height="48" /></bezel>
+		<bezel name="P41" element="xpiece"><bounds x="101" y="322" width="42" height="48" /></bezel>
+		<bezel name="P42" element="xpiece"><bounds x="157" y="322" width="42" height="48" /></bezel>
+		<bezel name="P43" element="xpiece"><bounds x="215" y="322" width="42" height="48" /></bezel>
+		<bezel name="P44" element="xpiece"><bounds x="271" y="322" width="42" height="48" /></bezel>
+		<bezel name="P45" element="xpiece"><bounds x="324" y="322" width="42" height="48" /></bezel>
+		<bezel name="P46" element="xpiece"><bounds x="380" y="322" width="42" height="48" /></bezel>
+		<bezel name="P47" element="xpiece"><bounds x="437" y="322" width="42" height="48" /></bezel>
+		<bezel name="P48" element="xpiece"><bounds x="46" y="377" width="42" height="48" /></bezel>
+		<bezel name="P49" element="xpiece"><bounds x="101" y="377" width="42" height="48" /></bezel>
+		<bezel name="P50" element="xpiece"><bounds x="157" y="377" width="42" height="48" /></bezel>
+		<bezel name="P51" element="xpiece"><bounds x="215" y="377" width="42" height="48" /></bezel>
+		<bezel name="P52" element="xpiece"><bounds x="271" y="377" width="42" height="48" /></bezel>
+		<bezel name="P53" element="xpiece"><bounds x="324" y="377" width="42" height="48" /></bezel>
+		<bezel name="P54" element="xpiece"><bounds x="380" y="377" width="42" height="48" /></bezel>
+		<bezel name="P55" element="xpiece"><bounds x="437" y="377" width="42" height="48" /></bezel>
+		<bezel name="P56" element="xpiece"><bounds x="46" y="433" width="42" height="48" /></bezel>
+		<bezel name="P57" element="xpiece"><bounds x="101" y="433" width="42" height="48" /></bezel>
+		<bezel name="P58" element="xpiece"><bounds x="157" y="433" width="42" height="48" /></bezel>
+		<bezel name="P59" element="xpiece"><bounds x="215" y="433" width="42" height="48" /></bezel>
+		<bezel name="P60" element="xpiece"><bounds x="271" y="433" width="42" height="48" /></bezel>
+		<bezel name="P61" element="xpiece"><bounds x="324" y="433" width="42" height="48" /></bezel>
+		<bezel name="P62" element="xpiece"><bounds x="380" y="433" width="42" height="48" /></bezel>
+		<bezel name="P63" element="xpiece"><bounds x="437" y="433" width="42" height="48" /></bezel>
+
+
+             
+        <!-- 64 LED's --> 
+
+            <!-- Line 8 --> 
+
+                <bezel name="led56" element="xled">
+			<bounds x="478" y="88" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led57" element="xled">
+			<bounds x="422" y="88" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led58" element="xled">
+			<bounds x="367" y="88" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led59" element="xled">
+			<bounds x="312" y="88" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led60" element="xled">
+			<bounds x="256" y="88" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led61" element="xled">
+			<bounds x="200" y="88" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led62" element="xled">
+			<bounds x="145" y="88" width="7" height="7" />
+		</bezel>
+
+		<bezel name="led63" element="xled">
+			<bounds x="89" y="88" width="7" height="7" />
+		</bezel>
+
+            <!-- Line 7 --> 
+
+		<bezel name="led48" element="xled">
+			<bounds x="478" y="144" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led49" element="xled">
+			<bounds x="422" y="144" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led50" element="xled">
+			<bounds x="367" y="144" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led51" element="xled">
+			<bounds x="312" y="144" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led52" element="xled">
+			<bounds x="256" y="144" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led53" element="xled">
+			<bounds x="200" y="144" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led54" element="xled">
+			<bounds x="145" y="144" width="7" height="7" />
+		</bezel>
+
+		<bezel name="led55" element="xled">
+			<bounds x="89" y="144" width="7" height="7" />
+		</bezel>
+
+
+            <!-- Line 6 --> 	
+
+		<bezel name="led40" element="xled">
+			<bounds x="478" y="199" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led41" element="xled">
+			<bounds x="422" y="199" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led42" element="xled">
+			<bounds x="367" y="199" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led43" element="xled">
+			<bounds x="312" y="199" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led44" element="xled">
+			<bounds x="256" y="199" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led45" element="xled">
+			<bounds x="200" y="199" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led46" element="xled">
+			<bounds x="145" y="199" width="7" height="7" />
+		</bezel>
+	
+		<bezel name="led47" element="xled">
+			<bounds x="89" y="199" width="7" height="7" />
+		</bezel>
+
+
+            <!-- Line 5 --> 
+
+		<bezel name="led32" element="xled">
+			<bounds x="478" y="255" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led33" element="xled">
+			<bounds x="422" y="255" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led34" element="xled">
+			<bounds x="367" y="255" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led35" element="xled">
+			<bounds x="312" y="255" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led36" element="xled">
+			<bounds x="256" y="255" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led37" element="xled">
+			<bounds x="200" y="255" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led38" element="xled">
+			<bounds x="145" y="255" width="7" height="7" />
+		</bezel>
+
+		<bezel name="led39" element="xled">
+			<bounds x="89" y="255" width="7" height="7" />
+		</bezel>
+
+
+            <!-- Line 4 --> 
+
+		<bezel name="led24" element="xled">
+			<bounds x="478" y="311" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led25" element="xled">
+			<bounds x="422" y="311" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led26" element="xled">
+			<bounds x="367" y="311" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led27" element="xled">
+			<bounds x="312" y="311" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led28" element="xled">
+			<bounds x="256" y="311" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led29" element="xled">
+			<bounds x="200" y="311" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led30" element="xled">
+			<bounds x="145" y="311" width="7" height="7" />
+		</bezel>
+
+		<bezel name="led31" element="xled">
+			<bounds x="89" y="311" width="7" height="7" />
+		</bezel>
+
+
+            <!-- Line 3 --> 
+
+		<bezel name="led16" element="xled">
+			<bounds x="478" y="366" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led17" element="xled">
+			<bounds x="422" y="366" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led18" element="xled">
+			<bounds x="367" y="366" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led19" element="xled">
+			<bounds x="312" y="366" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led20" element="xled">
+			<bounds x="256" y="366" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led21" element="xled">
+			<bounds x="200" y="366" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led22" element="xled">
+			<bounds x="145" y="366" width="7" height="7" />
+		</bezel>
+
+		<bezel name="led23" element="xled">
+			<bounds x="89" y="366" width="7" height="7" />
+		</bezel>
+
+
+            <!-- Line 2 --> 
+
+		<bezel name="led8" element="xled">
+			<bounds x="478" y="421" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led9" element="xled">
+			<bounds x="422" y="421" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led10" element="xled">
+			<bounds x="367" y="421" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led11" element="xled">
+			<bounds x="312" y="421" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led12" element="xled">
+			<bounds x="256" y="421" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led13" element="xled">
+			<bounds x="200" y="421" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led14" element="xled">
+			<bounds x="145" y="421" width="7" height="7" />
+		</bezel>
+
+		<bezel name="led15" element="xled">
+			<bounds x="89" y="421" width="7" height="7" />
+		</bezel>
+
+
+            <!-- Line 1 --> 
+
+		<bezel name="led0" element="xled">
+			<bounds x="478" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led1" element="xled">
+			<bounds x="422" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led2" element="xled">
+			<bounds x="367" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led3" element="xled">
+			<bounds x="312" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led4" element="xled">
+			<bounds x="256" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led5" element="xled">
+			<bounds x="200" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led6" element="xled">
+			<bounds x="145" y="478" width="7" height="7" />
+		</bezel>
+
+     		<bezel name="led7" element="xled">
+			<bounds x="89" y="478" width="7" height="7" />
+		</bezel>
+
+
+<!-- 64 board positions -->
+        <bezel element="xbutton" inputtag="LINE9" inputmask="0x80"><bounds x="40" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x40"><bounds x="97" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x20"><bounds x="152" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x10"><bounds x="208" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x08"><bounds x="264" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x04"><bounds x="319" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x02"><bounds x="374" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE9" inputmask="0x01"><bounds x="430" y="41" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x80"><bounds x="40" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x40"><bounds x="97" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x20"><bounds x="152" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x10"><bounds x="208" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x08"><bounds x="264" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x04"><bounds x="319" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x02"><bounds x="374" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE8" inputmask="0x01"><bounds x="430" y="97" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x80"><bounds x="40" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x40"><bounds x="97" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x20"><bounds x="152" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x10"><bounds x="208" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x08"><bounds x="264" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x04"><bounds x="319" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x02"><bounds x="374" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE7" inputmask="0x01"><bounds x="430" y="152" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x80"><bounds x="40" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x40"><bounds x="97" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x20"><bounds x="152" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x10"><bounds x="208" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x08"><bounds x="264" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x04"><bounds x="319" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x02"><bounds x="374" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE6" inputmask="0x01"><bounds x="430" y="208" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x80"><bounds x="40" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x40"><bounds x="97" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x20"><bounds x="152" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x10"><bounds x="208" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x08"><bounds x="264" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x04"><bounds x="319" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x02"><bounds x="374" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE5" inputmask="0x01"><bounds x="430" y="264" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x80"><bounds x="40" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x40"><bounds x="97" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x20"><bounds x="152" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x10"><bounds x="208" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x08"><bounds x="264" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x04"><bounds x="319" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x02"><bounds x="374" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE4" inputmask="0x01"><bounds x="430" y="319" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x80"><bounds x="40" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x40"><bounds x="97" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x20"><bounds x="152" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x10"><bounds x="208" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x08"><bounds x="264" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x04"><bounds x="319" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x02"><bounds x="374" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE3" inputmask="0x01"><bounds x="430" y="374" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x80"><bounds x="40" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x40"><bounds x="97" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x20"><bounds x="152" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x10"><bounds x="208" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x08"><bounds x="264" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x04"><bounds x="319" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x02"><bounds x="374" y="430" width="54" height="54" /></bezel>
+	<bezel element="xbutton" inputtag="LINE2" inputmask="0x01"><bounds x="430" y="430" width="54" height="54" /></bezel>
+
+<!-- Buttons -->
+
+	<bezel element="xkeys" inputtag="BUTTON_2" inputmask="0x80">     <!-- Up -->
+		<bounds x="462" y="564" width="22" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="xkeys" inputtag="BUTTON_2" inputmask="0x40">     <!-- Down -->
+		<bounds x="462" y="616" width="22" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="xkeys" inputtag="BUTTON_3" inputmask="0x40">     <!-- Left -->
+		<bounds x="437" y="588" width="20" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="xkeys" inputtag="BUTTON_1" inputmask="0x40">     <!-- Right -->	
+		<bounds x="488" y="588" width="22" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="xkeys" inputtag="BUTTON_3" inputmask="0x80">     <!-- ENT -->
+		<bounds x="437" y="564" width="22" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="xkeys" inputtag="BUTTON_1" inputmask="0x80">     <!-- CL -->
+		<bounds x="488" y="564" width="22" height="22" /><color alpha="0.25" />
+	</bezel>
+
+
+
+
+<!-- 12 boarder pieces + Buttons -->
+
+		<bezel name="Q6"  element="xpiece"><bounds x="499"  y="40" width="20" height="22" /></bezel>
+		<bezel name="Q7"  element="xpiece"><bounds x="499"  y="65" width="20" height="22" /></bezel>
+		<bezel name="Q8"  element="xpiece"><bounds x="499"  y="90" width="20" height="22" /></bezel>
+		<bezel name="Q9"  element="xpiece"><bounds x="499"  y="115" width="20" height="22" /></bezel>
+		<bezel name="Q10" element="xpiece"><bounds x="499"  y="140" width="20" height="22" /></bezel>
+		<bezel name="Q11" element="xpiece"><bounds x="499"  y="165" width="20" height="22" /></bezel>
+
+
+		<bezel name="Q0"  element="xpiece"><bounds x="499"  y="336" width="20" height="22" /></bezel>
+		<bezel name="Q1"  element="xpiece"><bounds x="499"  y="361" width="20" height="22" /></bezel>
+		<bezel name="Q2"  element="xpiece"><bounds x="499"  y="386" width="20" height="22" /></bezel>
+		<bezel name="Q3"  element="xpiece"><bounds x="499"  y="411" width="20" height="22" /></bezel>
+		<bezel name="Q4"  element="xpiece"><bounds x="499"  y="436" width="20" height="22" /></bezel>
+		<bezel name="Q5"  element="xpiece"><bounds x="499"  y="461" width="20" height="22" /></bezel>
+
+
+<!-- 12 buttons for border pieces + Buttons -->
+
+		<bezel element="xbutton_border_pieces" inputtag="B_BLACK" inputmask="0x01"><bounds x="499"  y="40" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_BLACK" inputmask="0x02"><bounds x="499"  y="65" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_BLACK" inputmask="0x04"><bounds x="499"  y="90" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_BLACK" inputmask="0x08"><bounds x="499"  y="115" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_BLACK" inputmask="0x10"><bounds x="499"  y="140" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_BLACK" inputmask="0x20"><bounds x="499"  y="165" width="20" height="22" /></bezel>
+
+		<bezel element="xbutton_border_pieces" inputtag="B_WHITE" inputmask="0x01"><bounds x="499"  y="336" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_WHITE" inputmask="0x02"><bounds x="499"  y="361" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_WHITE" inputmask="0x04"><bounds x="499"  y="386" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_WHITE" inputmask="0x08"><bounds x="499"  y="411" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_WHITE" inputmask="0x10"><bounds x="499"  y="436" width="20" height="22" /></bezel>
+		<bezel element="xbutton_border_pieces" inputtag="B_WHITE" inputmask="0x20"><bounds x="499"  y="461" width="20" height="22" /></bezel>
+
+
+                <bezel element="xclearboard" inputtag="B_BUTTONS" inputmask="0x01"><bounds x="492" y="217" width="33" height="25" /></bezel>
+                <bezel element="xstartpos" inputtag="B_BUTTONS" inputmask="0x02"><bounds x="492" y="252" width="33" height="25" /></bezel>
+                <bezel element="xturnboard" inputtag="B_BUTTONS" inputmask="0x04"><bounds x="492" y="287" width="33" height="25" /></bezel>
+
+
+
+<!-- The place where removed pieces are put -->
+	 	<bezel element="xbutton" inputtag="LINE10" inputmask="0x01"><bounds x="1"    y="37"   width="36"  height="488" /></bezel>
+		<bezel element="xbutton" inputtag="LINE10" inputmask="0x01"><bounds x="1"    y="489"  width="528" height="37"  /></bezel>
+		<bezel element="xbutton" inputtag="LINE10" inputmask="0x01"><bounds x="1"    y="1"    width="528" height="37"  /></bezel>
+		
+
+	</view>
+
+	<element name="mephisto">
+		<image file="..\Boards\van32.png" />
+	</element>
+
+	<element name="piece" defstate="0">
+		<image file="..\Pieces\BP.png" state="1"/>
+		<image file="..\Pieces\BKN.png" state="2"/>
+		<image file="..\Pieces\BB.png" state="3"/>
+		<image file="..\Pieces\BR.png" state="4"/>
+		<image file="..\Pieces\BQ.png" state="5"/>
+		<image file="..\Pieces\BK.png" state="6"/>
+		<image file="..\Pieces\WP.png" state="7"/>
+		<image file="..\Pieces\WKN.png" state="8"/>
+		<image file="..\Pieces\WB.png" state="9"/>
+		<image file="..\Pieces\WR.png" state="10"/>
+		<image file="..\Pieces\WQ.png" state="11"/>
+		<image file="..\Pieces\WK.png" state="12"/>
+		<image file="..\Pieces\BP_SEL.png" state="13"/>
+		<image file="..\Pieces\BKN_SEL.png" state="14"/>
+		<image file="..\Pieces\BB_SEL.png" state="15"/>
+		<image file="..\Pieces\BR_SEL.png" state="16"/>
+		<image file="..\Pieces\BQ_SEL.png" state="17"/>
+		<image file="..\Pieces\BK_SEL.png" state="18"/>
+		<image file="..\Pieces\WP_SEL.png" state="19"/>
+		<image file="..\Pieces\WKN_SEL.png" state="20"/>
+		<image file="..\Pieces\WB_SEL.png" state="21"/>
+		<image file="..\Pieces\WR_SEL.png" state="22"/>
+		<image file="..\Pieces\WQ_SEL.png" state="23"/>
+		<image file="..\Pieces\WK_SEL.png" state="24"/>
+	</element>
+
+	<element name="clearboard"><image file="..\Boards\ClearBoard.png" /></element>
+	<element name="startpos">  <image file="..\Boards\StartPos.png" />  </element>
+	<element name="turnboard"> <image file="..\Boards\TurnBoard.png" /> </element>
+
+	<element name="digit" defstate="0">
+		<led7seg>
+			<color red="0.0" green="0.75" blue="0.0" />
+		</led7seg>
+	</element>
+	<element name="led" defstate="0">
+		<disk state="1">
+			<color red="1.0" green="0.0" blue="0.0" />
+		</disk>
+		<disk state="0">
+			<color red="0.0" green="0.0" blue="0.0" />
+		</disk>
+	</element>
+	<element name="background">
+		<rect>
+			<bounds left="0" top="0" right="1" bottom="1" />
+			<color red="1.0" green="1.0" blue="1.0" />
+		</rect>
+	</element>
+
+
+	<element name="button" defstate="0"></element>
+
+
+	<element name="keys" defstate="0">
+ 		<rect state="1">
+      			<color red="0.0" green="0.0" blue="0.0" />
+		</rect>
+	</element>
+
+
+	<element name="button_border_pieces" defstate="0">
+ 
+	</element>
+
+
+	<element name="border_buttons" defstate="0">
+ 		<rect state="1">
+      			<color red="1.0" green="1.0" blue="1.0"/>
+		</rect>
+	</element>
+
+
+
+	<view name="External Artwork">
+
+
+            <!-- Board -->
+
+
+
+		<backdrop element="mephisto">
+			<bounds x="0" y="0" width="530" height="660" />
+		</backdrop>
+
+
+		<screen index="0"><bounds  x="196" y="577.6" width="110" height="26" /></screen>
+
+
+		<!-- Pieces -->
+		<bezel name="P0" element="piece"><bounds x="47" y="44" width="40" height="45" /></bezel>
+		<bezel name="P1" element="piece"><bounds x="103" y="44" width="40" height="45" /></bezel>
+		<bezel name="P2" element="piece"><bounds x="159" y="44" width="40" height="45" /></bezel>
+		<bezel name="P3" element="piece"><bounds x="215" y="44" width="40" height="45" /></bezel>
+		<bezel name="P4" element="piece"><bounds x="271" y="44" width="40" height="45" /></bezel>
+		<bezel name="P5" element="piece"><bounds x="327" y="44" width="40" height="45" /></bezel>
+		<bezel name="P6" element="piece"><bounds x="383" y="44" width="40" height="45" /></bezel>
+		<bezel name="P7" element="piece"><bounds x="439" y="44" width="40" height="45" /></bezel>
+		<bezel name="P8" element="piece"><bounds x="47" y="100" width="40" height="45" /></bezel>
+		<bezel name="P9" element="piece"><bounds x="103" y="100" width="40" height="45" /></bezel>
+		<bezel name="P10" element="piece"><bounds x="159" y="100" width="40" height="45" /></bezel>
+		<bezel name="P11" element="piece"><bounds x="215" y="100" width="40" height="45" /></bezel>
+		<bezel name="P12" element="piece"><bounds x="271" y="100" width="40" height="45" /></bezel>
+		<bezel name="P13" element="piece"><bounds x="327" y="100" width="40" height="45" /></bezel>
+		<bezel name="P14" element="piece"><bounds x="383" y="100" width="40" height="45" /></bezel>
+		<bezel name="P15" element="piece"><bounds x="439" y="100" width="40" height="45" /></bezel>
+		<bezel name="P16" element="piece"><bounds x="47" y="156" width="40" height="45" /></bezel>
+		<bezel name="P17" element="piece"><bounds x="103" y="156" width="40" height="45" /></bezel>
+		<bezel name="P18" element="piece"><bounds x="159" y="156" width="40" height="45" /></bezel>
+		<bezel name="P19" element="piece"><bounds x="215" y="156" width="40" height="45" /></bezel>
+		<bezel name="P20" element="piece"><bounds x="271" y="156" width="40" height="45" /></bezel>
+		<bezel name="P21" element="piece"><bounds x="327" y="156" width="40" height="45" /></bezel>
+		<bezel name="P22" element="piece"><bounds x="383" y="156" width="40" height="45" /></bezel>
+		<bezel name="P23" element="piece"><bounds x="439" y="156" width="40" height="45" /></bezel>
+		<bezel name="P24" element="piece"><bounds x="47" y="212" width="40" height="45" /></bezel>
+		<bezel name="P25" element="piece"><bounds x="103" y="212" width="40" height="45" /></bezel>
+		<bezel name="P26" element="piece"><bounds x="159" y="212" width="40" height="45" /></bezel>
+		<bezel name="P27" element="piece"><bounds x="215" y="212" width="40" height="45" /></bezel>
+		<bezel name="P28" element="piece"><bounds x="271" y="212" width="40" height="45" /></bezel>
+		<bezel name="P29" element="piece"><bounds x="327" y="212" width="40" height="45" /></bezel>
+		<bezel name="P30" element="piece"><bounds x="383" y="212" width="40" height="45" /></bezel>
+		<bezel name="P31" element="piece"><bounds x="439" y="212" width="40" height="45" /></bezel>
+		<bezel name="P32" element="piece"><bounds x="47" y="268" width="40" height="45" /></bezel>
+		<bezel name="P33" element="piece"><bounds x="103" y="268" width="40" height="45" /></bezel>
+		<bezel name="P34" element="piece"><bounds x="159" y="268" width="40" height="45" /></bezel>
+		<bezel name="P35" element="piece"><bounds x="215" y="268" width="40" height="45" /></bezel>
+		<bezel name="P36" element="piece"><bounds x="271" y="268" width="40" height="45" /></bezel>
+		<bezel name="P37" element="piece"><bounds x="327" y="268" width="40" height="45" /></bezel>
+		<bezel name="P38" element="piece"><bounds x="383" y="268" width="40" height="45" /></bezel>
+		<bezel name="P39" element="piece"><bounds x="439" y="268" width="40" height="45" /></bezel>
+		<bezel name="P40" element="piece"><bounds x="47" y="324" width="40" height="45" /></bezel>
+		<bezel name="P41" element="piece"><bounds x="103" y="324" width="40" height="45" /></bezel>
+		<bezel name="P42" element="piece"><bounds x="159" y="324" width="40" height="45" /></bezel>
+		<bezel name="P43" element="piece"><bounds x="215" y="324" width="40" height="45" /></bezel>
+		<bezel name="P44" element="piece"><bounds x="271" y="324" width="40" height="45" /></bezel>
+		<bezel name="P45" element="piece"><bounds x="327" y="324" width="40" height="45" /></bezel>
+		<bezel name="P46" element="piece"><bounds x="383" y="324" width="40" height="45" /></bezel>
+		<bezel name="P47" element="piece"><bounds x="439" y="324" width="40" height="45" /></bezel>
+		<bezel name="P48" element="piece"><bounds x="47" y="380" width="40" height="45" /></bezel>
+		<bezel name="P49" element="piece"><bounds x="103" y="380" width="40" height="45" /></bezel>
+		<bezel name="P50" element="piece"><bounds x="159" y="380" width="40" height="45" /></bezel>
+		<bezel name="P51" element="piece"><bounds x="215" y="380" width="40" height="45" /></bezel>
+		<bezel name="P52" element="piece"><bounds x="271" y="380" width="40" height="45" /></bezel>
+		<bezel name="P53" element="piece"><bounds x="327" y="380" width="40" height="45" /></bezel>
+		<bezel name="P54" element="piece"><bounds x="383" y="380" width="40" height="45" /></bezel>
+		<bezel name="P55" element="piece"><bounds x="439" y="380" width="40" height="45" /></bezel>
+		<bezel name="P56" element="piece"><bounds x="47" y="436" width="40" height="45" /></bezel>
+		<bezel name="P57" element="piece"><bounds x="103" y="436" width="40" height="45" /></bezel>
+		<bezel name="P58" element="piece"><bounds x="159" y="436" width="40" height="45" /></bezel>
+		<bezel name="P59" element="piece"><bounds x="215" y="436" width="40" height="45" /></bezel>
+		<bezel name="P60" element="piece"><bounds x="271" y="436" width="40" height="45" /></bezel>
+		<bezel name="P61" element="piece"><bounds x="327" y="436" width="40" height="45" /></bezel>
+		<bezel name="P62" element="piece"><bounds x="383" y="436" width="40" height="45" /></bezel>
+		<bezel name="P63" element="piece"><bounds x="439" y="436" width="40" height="45" /></bezel>
+
+             
+	<!-- 64 LED's --> 
+
+            <!-- Line 8 --> 
+
+		<bezel name="led56" element="led">
+			<bounds x="478" y="88" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led57" element="led">
+			<bounds x="422" y="88" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led58" element="led">
+			<bounds x="367" y="88" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led59" element="led">
+			<bounds x="312" y="88" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led60" element="led">
+			<bounds x="256" y="88" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led61" element="led">
+			<bounds x="200" y="88" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led62" element="led">
+			<bounds x="145" y="88" width="6" height="6" />
+		</bezel>
+
+		<bezel name="led63" element="led">
+			<bounds x="89" y="88" width="6" height="6" />
+		</bezel>
+
+            <!-- Line 7 --> 
+
+		<bezel name="led48" element="led">
+			<bounds x="478" y="144" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led49" element="led">
+			<bounds x="422" y="144" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led50" element="led">
+			<bounds x="367" y="144" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led51" element="led">
+			<bounds x="312" y="144" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led52" element="led">
+			<bounds x="256" y="144" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led53" element="led">
+			<bounds x="200" y="144" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led54" element="led">
+			<bounds x="145" y="144" width="6" height="6" />
+		</bezel>
+
+		<bezel name="led55" element="led">
+			<bounds x="89" y="144" width="6" height="6" />
+		</bezel>
+
+
+            <!-- Line 6 --> 	
+
+		<bezel name="led40" element="led">
+			<bounds x="478" y="199" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led41" element="led">
+			<bounds x="422" y="199" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led42" element="led">
+			<bounds x="367" y="199" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led43" element="led">
+			<bounds x="312" y="199" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led44" element="led">
+			<bounds x="256" y="199" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led45" element="led">
+			<bounds x="200" y="199" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led46" element="led">
+			<bounds x="145" y="199" width="6" height="6" />
+		</bezel>
+	
+		<bezel name="led47" element="led">
+			<bounds x="89" y="199" width="6" height="6" />
+		</bezel>
+
+
+            <!-- Line 5 --> 
+
+		<bezel name="led32" element="led">
+			<bounds x="478" y="255" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led33" element="led">
+			<bounds x="422" y="255" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led34" element="led">
+			<bounds x="367" y="255" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led35" element="led">
+			<bounds x="312" y="255" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led36" element="led">
+			<bounds x="256" y="255" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led37" element="led">
+			<bounds x="200" y="255" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led38" element="led">
+			<bounds x="145" y="255" width="6" height="6" />
+		</bezel>
+
+		<bezel name="led39" element="led">
+			<bounds x="89" y="255" width="6" height="6" />
+		</bezel>
+
+
+            <!-- Line 4 --> 
+
+		<bezel name="led24" element="led">
+			<bounds x="478" y="311" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led25" element="led">
+			<bounds x="422" y="311" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led26" element="led">
+			<bounds x="367" y="311" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led27" element="led">
+			<bounds x="312" y="311" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led28" element="led">
+			<bounds x="256" y="311" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led29" element="led">
+			<bounds x="200" y="311" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led30" element="led">
+			<bounds x="145" y="311" width="6" height="6" />
+		</bezel>
+
+		<bezel name="led31" element="led">
+			<bounds x="89" y="311" width="6" height="6" />
+		</bezel>
+
+
+            <!-- Line 3 --> 
+
+		<bezel name="led16" element="led">
+			<bounds x="478" y="366" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led17" element="led">
+			<bounds x="422" y="366" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led18" element="led">
+			<bounds x="367" y="366" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led19" element="led">
+			<bounds x="312" y="366" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led20" element="led">
+			<bounds x="256" y="366" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led21" element="led">
+			<bounds x="200" y="366" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led22" element="led">
+			<bounds x="145" y="366" width="6" height="6" />
+		</bezel>
+
+		<bezel name="led23" element="led">
+			<bounds x="89" y="366" width="6" height="6" />
+		</bezel>
+
+
+            <!-- Line 2 --> 
+
+		<bezel name="led8" element="led">
+			<bounds x="478" y="421" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led9" element="led">
+			<bounds x="422" y="421" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led10" element="led">
+			<bounds x="367" y="421" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led11" element="led">
+			<bounds x="312" y="421" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led12" element="led">
+			<bounds x="256" y="421" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led13" element="led">
+			<bounds x="200" y="421" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led14" element="led">
+			<bounds x="145" y="421" width="6" height="6" />
+		</bezel>
+
+		<bezel name="led15" element="led">
+			<bounds x="89" y="421" width="6" height="6" />
+		</bezel>
+
+
+            <!-- Line 1 --> 
+
+		<bezel name="led0" element="led">
+			<bounds x="478" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led1" element="led">
+			<bounds x="422" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led2" element="led">
+			<bounds x="367" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led3" element="led">
+			<bounds x="312" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led4" element="led">
+			<bounds x="256" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led5" element="led">
+			<bounds x="200" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led6" element="led">
+			<bounds x="145" y="478" width="6" height="6" />
+		</bezel>
+
+     		<bezel name="led7" element="led">
+			<bounds x="89" y="478" width="6" height="6" />
+		</bezel>
+
+
+<!-- 64 board positions -->
+	<bezel element="button" inputtag="LINE9" inputmask="0x80"><bounds x="40" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x40"><bounds x="97" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x20"><bounds x="152" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x10"><bounds x="208" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x08"><bounds x="264" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x04"><bounds x="319" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x02"><bounds x="374" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE9" inputmask="0x01"><bounds x="430" y="41" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x80"><bounds x="40" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x40"><bounds x="97" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x20"><bounds x="152" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x10"><bounds x="208" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x08"><bounds x="264" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x04"><bounds x="319" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x02"><bounds x="374" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE8" inputmask="0x01"><bounds x="430" y="97" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x80"><bounds x="40" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x40"><bounds x="97" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x20"><bounds x="152" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x10"><bounds x="208" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x08"><bounds x="264" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x04"><bounds x="319" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x02"><bounds x="374" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE7" inputmask="0x01"><bounds x="430" y="152" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x80"><bounds x="40" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x40"><bounds x="97" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x20"><bounds x="152" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x10"><bounds x="208" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x08"><bounds x="264" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x04"><bounds x="319" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x02"><bounds x="374" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE6" inputmask="0x01"><bounds x="430" y="208" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x80"><bounds x="40" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x40"><bounds x="97" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x20"><bounds x="152" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x10"><bounds x="208" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x08"><bounds x="264" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x04"><bounds x="319" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x02"><bounds x="374" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE5" inputmask="0x01"><bounds x="430" y="264" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x80"><bounds x="40" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x40"><bounds x="97" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x20"><bounds x="152" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x10"><bounds x="208" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x08"><bounds x="264" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x04"><bounds x="319" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x02"><bounds x="374" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE4" inputmask="0x01"><bounds x="430" y="319" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x80"><bounds x="40" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x40"><bounds x="97" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x20"><bounds x="152" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x10"><bounds x="208" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x08"><bounds x="264" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x04"><bounds x="319" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x02"><bounds x="374" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE3" inputmask="0x01"><bounds x="430" y="374" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x80"><bounds x="40" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x40"><bounds x="97" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x20"><bounds x="152" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x10"><bounds x="208" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x08"><bounds x="264" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x04"><bounds x="319" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x02"><bounds x="374" y="430" width="54" height="54" /></bezel>
+	<bezel element="button" inputtag="LINE2" inputmask="0x01"><bounds x="430" y="430" width="54" height="54" /></bezel>
+
+<!-- Buttons -->
+
+	<bezel element="keys" inputtag="BUTTON_2" inputmask="0x80">     <!-- Up -->
+		<bounds x="461" y="560" width="19" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="keys" inputtag="BUTTON_2" inputmask="0x40">     <!-- Down -->
+		<bounds x="461" y="616" width="19" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="keys" inputtag="BUTTON_3" inputmask="0x40">     <!-- Left -->
+		<bounds x="437" y="588" width="19" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="keys" inputtag="BUTTON_1" inputmask="0x40">     <!-- Right -->	
+		<bounds x="486" y="588" width="19" height="22" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="keys" inputtag="BUTTON_3" inputmask="0x80">     <!-- ENT -->
+		<bounds x="437" y="560" width="18" height="21" /><color alpha="0.25" />
+	</bezel>
+	<bezel element="keys" inputtag="BUTTON_1" inputmask="0x80">     <!-- CL -->
+		<bounds x="486" y="560" width="19" height="21" /><color alpha="0.25" />
+	</bezel>
+
+
+<!-- 12 boarder pieces + Buttons -->
+
+		<bezel name="Q6"  element="piece"><bounds x="500"  y="35" width="20" height="22" /></bezel>
+		<bezel name="Q7"  element="piece"><bounds x="500"  y="60" width="20" height="22" /></bezel>
+		<bezel name="Q8"  element="piece"><bounds x="500"  y="85" width="20" height="22" /></bezel>
+		<bezel name="Q9"  element="piece"><bounds x="500"  y="110" width="20" height="22" /></bezel>
+		<bezel name="Q10" element="piece"><bounds x="500"  y="135" width="20" height="22" /></bezel>
+		<bezel name="Q11" element="piece"><bounds x="500"  y="160" width="20" height="22" /></bezel>
+
+
+		<bezel name="Q0"  element="piece"><bounds x="500"  y="340" width="20" height="22" /></bezel>
+		<bezel name="Q1"  element="piece"><bounds x="500"  y="365" width="20" height="22" /></bezel>
+		<bezel name="Q2"  element="piece"><bounds x="500"  y="390" width="20" height="22" /></bezel>
+		<bezel name="Q3"  element="piece"><bounds x="500"  y="415" width="20" height="22" /></bezel>
+		<bezel name="Q4"  element="piece"><bounds x="500"  y="440" width="20" height="22" /></bezel>
+		<bezel name="Q5"  element="piece"><bounds x="500"  y="465" width="20" height="22" /></bezel>
+
+                <bezel name="CLEARBOARD" element="clearboard"><bounds x="499" y="222" width="22" height="22" /></bezel>
+                <bezel name="STARTPOS  " element="startpos">  <bounds x="499" y="252" width="22" height="22" /></bezel>
+                <bezel name="TURNBOARD " element="turnboard"> <bounds x="499" y="282" width="22" height="22" /></bezel>
+
+
+<!-- 12 buttons for border pieces + Buttons -->
+
+		<bezel element="button_border_pieces" inputtag="B_BLACK" inputmask="0x01"><bounds x="500"  y="35" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_BLACK" inputmask="0x02"><bounds x="500"  y="60" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_BLACK" inputmask="0x04"><bounds x="500"  y="85" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_BLACK" inputmask="0x08"><bounds x="500"  y="110" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_BLACK" inputmask="0x10"><bounds x="500"  y="135" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_BLACK" inputmask="0x20"><bounds x="500"  y="160" width="20" height="22" /></bezel>
+
+		<bezel element="button_border_pieces" inputtag="B_WHITE" inputmask="0x01"><bounds x="500"  y="340" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_WHITE" inputmask="0x02"><bounds x="500"  y="365" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_WHITE" inputmask="0x04"><bounds x="500"  y="390" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_WHITE" inputmask="0x08"><bounds x="500"  y="415" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_WHITE" inputmask="0x10"><bounds x="500"  y="440" width="20" height="22" /></bezel>
+		<bezel element="button_border_pieces" inputtag="B_WHITE" inputmask="0x20"><bounds x="500"  y="465" width="20" height="22" /></bezel>
+
+
+                <bezel element="keys" inputtag="B_BUTTONS" inputmask="0x01"><bounds x="499" y="222" width="22" height="22" /><color alpha="0.2" /></bezel>
+                <bezel element="keys" inputtag="B_BUTTONS" inputmask="0x02"><bounds x="499" y="252" width="22" height="22" /><color alpha="0.2" /></bezel>
+                <bezel element="keys" inputtag="B_BUTTONS" inputmask="0x04"><bounds x="499" y="282" width="22" height="22" /><color alpha="0.2" /></bezel>
+
+
+
+<!-- The place where removed pieces are put -->
+	 	<bezel element="button" inputtag="LINE10" inputmask="0x01"><bounds x="1"    y="37"   width="36"  height="488" /></bezel>
+		<bezel element="button" inputtag="LINE10" inputmask="0x01"><bounds x="1"    y="489"  width="528" height="37"  /></bezel>
+		<bezel element="button" inputtag="LINE10" inputmask="0x01"><bounds x="1"    y="1"    width="528" height="37"  /></bezel>
+		
+
+	</view>
+
+</mamelayout>
