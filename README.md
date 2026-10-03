@@ -1,3 +1,19 @@
+# Web-App 1.2.1 – Stand Android 1.36
+
+Vancouver: Aufgenommene Figuren behalten jetzt ihren Typ und ihre Farbe.
+Der Sensor-Versatz von 14 statt 12 wird auch für FEN und Modulstände verwendet.
+MM VI: zusätzliche Textgrafik unter dem Brett entfernt; authentisches LCD bleibt.
+Vancouver: vergrößertes LCD kompakter. MM VI/Vancouver nutzen im Hochformat
+jeweils die volle Breite der Modulansicht. Tasten sind durch Scrollen erreichbar.
+Polgar: unterer Fotoabschnitt entfernt, vergrößertes LCD und Tasten direkt darunter.
+
+Das Update-ZIP enthält alle neuen Webdateien einschließlich Mephisto-Engine.
+Die unveränderten sechs Stockfish-WASM-Teile auf der bestehenden Website behalten.
+Entpackte Inhalte ins bestehende GitHub-Pages-Repository hochladen, keine ZIP-Datei.
+Website-Adresse und Browserprofil beibehalten; Browserdaten nicht löschen.
+Nach dem Update auf WEB 1.2.1 und den vollständig geladenen Offline-Cache warten.
+Die Veröffentlichung der Website ist nicht Teil dieses Download-Pakets.
+
 # Web-App 1.2.0 – Mephisto-Module lokal
 
 Neu gegenüber Web 1.1.5: MM VI, Vancouver 32 Bit und Polgar 10 MHz (10.1)
@@ -46,7 +62,7 @@ Kein Mac, Xcode oder Apple-Entwicklerkonto notwendig. Diese Web-App wird über H
 
 ## Veröffentlichen ohne Mac – eigene Website
 
-ZIP zusammenfügen und auf einem Windows-PC entpacken. **Den Inhalt** von `SprachSchach-iPad-Web-1.1.5` auf die Website hochladen, z. B. in `/sprachschach/`; index.html muss dort direkt liegen. HTTPS aktivieren. Keine Dateien umbenennen: die sechs Stockfish-WASM-Teile müssen mit hochgeladen werden. MIME-Typen: .js text/javascript, .wasm application/wasm, .webmanifest application/manifest+json. Serverseitige API-Schlüssel sind nicht nötig. Für sw.js Cache-Control: no-cache verwenden. Relative Pfade unterstützen Unterordner.
+ZIP zusammenfügen und auf einem Windows-PC entpacken. **Den Inhalt** von `SprachSchach-iPad-Web-1.2.1` auf die Website hochladen, z. B. in `/sprachschach/`; index.html muss dort direkt liegen. HTTPS aktivieren. Keine Dateien umbenennen: die sechs Stockfish-WASM-Teile müssen mit hochgeladen werden. MIME-Typen: .js text/javascript, .wasm application/wasm, .webmanifest application/manifest+json. Serverseitige API-Schlüssel sind nicht nötig. Für sw.js Cache-Control: no-cache verwenden. Relative Pfade unterstützen Unterordner.
 
 ## GitHub Pages als Möglichkeit ohne eigenen Server
 
@@ -84,7 +100,7 @@ Sprachbefehle: „Analyse-Modus“ / „Spiel-Modus“, “analysis mode” / �
 
 ## Bestehende GitHub-Seite aktualisieren
 
-Deine Adresse bleibt https://peterpan1926.github.io/SprachSchach/ . Vorher in der App „Partien und Chat sichern“ wählen. Im GitHub-Repository den **Inhalt** von `SprachSchach-iPad-Web-1.1.5` in den Hauptordner hochladen und vorhandene Programmdateien ersetzen. `index.html`, `sw.js`, `variations.js` und `notation-view.js` müssen direkt im Hauptordner liegen, nicht in einem zusätzlichen Versionsordner. Die bisherigen Pages-Einstellungen bleiben bestehen. Keine Schlüssel oder Partiensicherungen ins Repository hochladen.
+Deine Adresse bleibt https://peterpan1926.github.io/SprachSchach/ . Vorher in der App „Partien und Chat sichern“ wählen. Im GitHub-Repository den **Inhalt** von `SprachSchach-iPad-Web-1.2.1` in den Hauptordner hochladen und vorhandene Programmdateien ersetzen. `index.html`, `sw.js`, `variations.js` und `notation-view.js` müssen direkt im Hauptordner liegen, nicht in einem zusätzlichen Versionsordner. Die bisherigen Pages-Einstellungen bleiben bestehen. Keine Schlüssel oder Partiensicherungen ins Repository hochladen.
 
 Nach abgeschlossenem GitHub-Pages-Build die bisherige Adresse in Safari öffnen. Die neue Offline-Version herunterladen lassen. Bei der Meldung „Neue Version bereit“ die Seite beziehungsweise die Home-Bildschirm-App schließen und erneut öffnen oder neu laden. Erst anschließend offline verwenden. Der Cache erhält eine neue Versionskennung; Archiv und verschlüsselte Schlüssel bleiben am selben Ursprung/Safari-Profil gespeichert. Websitedaten nicht löschen. Safari und eine Home-Bildschirm-Installation können getrennte Datenbestände verwenden.
 
