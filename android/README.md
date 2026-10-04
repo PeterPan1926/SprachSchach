@@ -86,5 +86,7 @@ Mit einem laufenden Android-Gerät/Emulator kann `./gradlew connectedDebugAndroi
 den Start in der echten Android-WebView, Menübedienung und eine legale Stockfish-
 Antwort prüfen. Der GitHub-Workflow führt diesen Test auf Android 35 aus.
 
-Die Drittanbieter-Lizenzen der Web-App werden mitgeliefert; siehe die Lizenz- und
-Quellcodehinweise im Repository-Hauptordner.
+Die Drittanbieter-Lizenzen der Web-App und die Apache-2.0-Lizenz der
+AndroidX-/Kotlin-Bibliotheken werden mitgeliefert. Die Android-Lizenzhinweise
+sind unter Hilfe erreichbar; weitere Lizenz- und Quellcodehinweise stehen
+im Repository-Hauptordner.

@@ -78,5 +78,7 @@ jobs:
         if: always()
         with:
           name: Android-device-test-results
-          path: android/app/build/reports/androidTests/connected/
+          path: |
+            android/app/build/reports/androidTests/connected/
+            ${{ runner.temp }}/emulator.log
           if-no-files-found: ignore

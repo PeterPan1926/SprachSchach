@@ -238,7 +238,7 @@ public class MainActivity extends Activity {
     @Override protected void onResume() { super.onResume(); foreground = true; if (startAfterPermission) { startAfterPermission = false; listen(pendingLanguage); } if (web != null) { web.onResume(); web.evaluateJavascript("window.engineForegroundChanged?.(true)", null); } }
     @Override protected void onPause() { foreground = false; stopListening(); if (tts != null) tts.stop(); if (web != null) { web.evaluateJavascript("window.engineForegroundChanged?.(false)", null); web.onPause(); } super.onPause(); }
     @Override public void onBackPressed() {
-        web.evaluateJavascript("(()=>{const d=document.querySelector('dialog[open]');if(d){if(d.dispatchEvent(new Event('cancel',{cancelable:true})))d.close();return true;}const f=document.querySelector('#lcdFullscreenPanel:not([hidden])');if(f){window.closeLcdFullscreen?.();return true;}return false;})()", handled -> { if (!"true".equals(handled)) super.onBackPressed(); });
+        web.evaluateJavascript("(()=>{const d=document.querySelector('dialog[open]');if(d){if(d.dispatchEvent(new Event('cancel',{cancelable:true})))d.close();return true;}const f=document.querySelector('#lcdFullscreenPanel:not([hidden])');if(f){window.closeLcdFullscreen?.();return true;}return false;})()", handled -> { if (!"true".equals(handled)) { if (web.canGoBack()) web.goBack(); else super.onBackPressed(); } });
     }
     @Override protected void onDestroy() {
         stopListening();if (tts != null) tts.shutdown();if (fileCallback != null) fileCallback.onReceiveValue(null);
