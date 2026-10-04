@@ -1,5 +1,10 @@
 # Web-App 1.2.1 – Stand Android 1.36
 
+Die Notation lässt sich mit den Pfeiltasten durchgehen: **←** vorheriger Halbzug,
+**→** nächster Halbzug, **↑** Partieanfang, **↓** Partieende. Die Navigation gilt
+für die ausgewählte Hauptpartie oder Variante. In Eingabefeldern und geöffneten
+Dialogen bleiben die normalen Tastaturfunktionen erhalten.
+
 Vancouver: Aufgenommene Figuren behalten jetzt ihren Typ und ihre Farbe.
 Der Sensor-Versatz von 14 statt 12 wird auch für FEN und Modulstände verwendet.
 MM VI: zusätzliche Textgrafik unter dem Brett entfernt; authentisches LCD bleibt.
