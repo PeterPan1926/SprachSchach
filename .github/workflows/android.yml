@@ -31,12 +31,18 @@ jobs:
         working-directory: android
         timeout-minutes: 12
         run: |
+          phase=enable-kvm
+          trap 'code=$?; if [ "$code" != 0 ]; then echo "::error title=Android test stage::$phase failed with exit $code"; fi' EXIT
           sudo chmod a+rw /dev/kvm
+          phase=install-emulator-sdk
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
+          phase=create-avd
           echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd --name SprachSchachTest --package 'system-images;android-35;google_apis;x86_64'
+          phase=start-emulator
           "$ANDROID_HOME/emulator/emulator" -avd SprachSchachTest -no-window -no-audio -no-snapshot -no-boot-anim -accel on -gpu auto -memory 2048 -cores 2 > "$RUNNER_TEMP/emulator.log" 2>&1 &
           emulator_pid=$!
           "$ANDROID_HOME/platform-tools/adb" start-server
+          phase=wait-for-android-boot
           for attempt in $(seq 1 120); do
             if ! kill -0 "$emulator_pid" 2>/dev/null; then
               echo 'Android emulator exited before boot' >> "$GITHUB_STEP_SUMMARY"
@@ -54,7 +60,20 @@ jobs:
             exit 1
           fi
           "$ANDROID_HOME/platform-tools/adb" shell input keyevent 82
-          ./gradlew --no-daemon connectedDebugAndroidTest
+          phase=execute-native-smoke-test
+          if ! ./gradlew --no-daemon connectedDebugAndroidTest; then
+            python3 - <<'PYTEST'
+          import glob, xml.etree.ElementTree as E
+          for file in glob.glob('app/build/outputs/androidTest-results/connected/**/*.xml', recursive=True):
+              try:
+                  for failure in E.parse(file).iter('failure'):
+                      message=failure.get('message', '').split('\n')[0][:1000]
+                      print('::error title=Android smoke test::'+message)
+              except E.ParseError:
+                  pass
+          PYTEST
+            exit 1
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
