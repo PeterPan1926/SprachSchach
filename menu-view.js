@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded',()=>{
  move('analysis',$('variationTools'));move('analysis',$('engineSettings'));move('analysis',$('analyzeGame'));move('analysis',$('analysisHint'));move('analysis',$('summaryCard'));
  move('files',$('importText').parentElement);move('files',$('pgnSave').closest('.card'));
  move('voice',$('speechOutputToggle'));move('voice',$('voiceLabel').closest('.card'));
- move('display',$('lcdEnabled').closest('label'));move('display',$('lcdTools'));move('display',$('mmviViewOptions'));
+ move('display',$('engineViewControls'));move('display',$('lcdEnabled').closest('label'));move('display',$('lcdTools'));move('display',$('mmviViewOptions'));
  move('help',$('help'));move('help',$('privacy'));move('help',main.querySelector('details.footer'));move('help',main.querySelector('.pwa-card'));
  // Keep move entry and its immediate feedback beside the board.
  const quick=document.createElement('section');quick.className='menu-quick';quick.setAttribute('aria-label',text('Zug eingeben','Enter a move'));

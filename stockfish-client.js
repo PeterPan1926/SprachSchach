@@ -22,6 +22,6 @@ export const configureEngine=value=>pool.configure(value);
 export const getEngineConfig=()=>({...pool.config});
 export const setEngineForeground=active=>pool.setForeground(active);
 export class StockfishClient {
- search(moves,turn,{skill=20,nodes=null,movetime=800,fen=null,infinite=false,background=false,multipv=1,onUpdate=null,onState=null}={}){return new Promise((resolve,reject)=>{pool.submit({owner:this,moves:[...moves],turn,skill,nodes,movetime,fen,infinite,background,multipv:Math.max(1,Math.min(3,Number(multipv)||1)),update:onUpdate,state:onState,resolve,reject});});}
+ search(moves,turn,{skill=20,nodes=null,movetime=800,fen=null,infinite=false,background=false,multipv=1,onUpdate=null,onState=null}={}){return new Promise((resolve,reject)=>{pool.submit({owner:this,moves:[...moves],turn,skill,nodes,movetime,fen,infinite,background,multipv:Math.max(1,Math.min(4,Number(multipv)||1)),update:onUpdate,state:onState,resolve,reject});});}
  abort(error=new Error('cancelled')){pool.cancel(this,error);}
 }

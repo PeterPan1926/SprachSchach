@@ -6,6 +6,22 @@ Eine eigenständige Android-App auf Basis dieser Web-App liegt unter
 [`android/`](android/README.md). Sie enthält die lokalen Schach-Engines und startet
 mit der Menüansicht. Installation, Datenübernahme und APK-Build sind dort beschrieben.
 
+## Normale Engine-Anzeige
+
+Die zusätzliche **Normal**-Ansicht zeigt Stockfish-Informationen in normaler
+Schrift: Bewertung aus Sicht von Weiß, individuelle Rechentiefe und bis zu
+**acht legalen Halbzügen pro Variante**. Am Anfang einer Berechnung oder vor
+Partieende kann die berechnete Fortsetzung kürzer sein; es werden keine Züge ergänzt.
+**Varianten** wählt **1, 2, 3 oder 4** Kandidaten. Einstellung und Ansicht bleiben
+im Browser gespeichert. **Daueranalyse** verwendet die gewählte Analysezeit
+unter Analyse → Stockfish-Einstellungen, einschließlich „Unendlich“.
+
+In der Menüansicht unter **Darstellung → Engine-Anzeige** zwischen **Normal**,
+**LCD** und **Aus** wechseln. In der klassischen Ansicht steht die Auswahl direkt
+auf der Seite. Die Normal-Anzeige ist beim ersten Start ohne aktive LCD-Einstellung
+voreingestellt und folgt der angezeigten Stellung beim Durchgehen von Partien.
+Stockfish berechnet die Informationen lokal, auch bei einem Mephisto als Gegner.
+
 ## Alternative Menüansicht
 
 Über **„Menüansicht ausprobieren“** oben auf der Seite wird die alternative

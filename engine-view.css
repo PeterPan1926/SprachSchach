@@ -1,0 +1,11 @@
+.engine-panel{min-width:0;margin-bottom:12px}
+.engine-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.engine-panel h2{font-size:18px;margin:0}
+.engine-panel label,.engine-line-metrics{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.engine-panel select{min-width:64px;max-width:100%}
+.engine-line{padding:12px 0;border-top:1px solid #49616e}
+.engine-line-score{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent)}
+.engine-line-depth{margin-left:auto;color:#b1c2cc;font-size:14px}
+.engine-line-pv{font-size:16px;line-height:1.7;overflow-wrap:anywhere;margin:8px 0 0}
+#engineViewControls select{max-width:180px;margin-left:8px}
+@media(max-width:420px){.engine-line-depth{margin-left:0}.engine-panel-heading{align-items:flex-start}}

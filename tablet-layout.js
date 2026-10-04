@@ -16,7 +16,7 @@ export function fitTabletLayout(){
 export function prepareTabletLayout(){
  const stage=document.getElementById('playArea');
  const left=document.createElement('div');left.id='ipadBoardColumn';left.append(document.getElementById('boardStage'),document.getElementById('replayControls'));
- const right=document.createElement('div');right.id='ipadInfoColumn';right.append(document.getElementById('lcdPanel'),document.getElementById('notationCard'),document.getElementById('chatCard'));
+ const right=document.createElement('div');right.id='ipadInfoColumn';right.append(document.getElementById('lcdPanel'),document.getElementById('enginePanel'),document.getElementById('notationCard'),document.getElementById('chatCard'));
  stage.replaceChildren(left,right);document.body.classList.add('ipad-ready');fitTabletLayout();
  window.addEventListener('resize',fitTabletLayout);window.visualViewport?.addEventListener('resize',fitTabletLayout);
  if(typeof ResizeObserver==='function')new ResizeObserver(fitTabletLayout).observe(document.getElementById('playingHeader'));
