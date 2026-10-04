@@ -1,0 +1,45 @@
+name: Android 1.36 Menu Release
+on:
+  push:
+    tags: ['android-136-menu-v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Prepare build tools and original APK
+        run: |
+          python -m pip install PyYAML==6.0.2
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'build-tools;35.0.0'
+          mkdir -p native136
+          curl -fL --retry 3 -o native136/original.apk https://github.com/PeterPan1926/SprachSchach/releases/download/sprach_schach_v1_36/SprachSchach-1.36.apk
+          curl -fL --retry 3 -o native136/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.12.1/apktool_2.12.1.jar
+          echo 'ed63efbc299c7aea551dcc66e6808a59ea11c34898b45579cc219396cd247af4  native136/original.apk' | sha256sum --check
+          echo '66cf4524a4a45a7f56567d08b2c9b6ec237bcdd78cee69fd4a59c8a0243aeafa  native136/apktool.jar' | sha256sum --check
+      - name: Build original app with top menus
+        run: |
+          java -jar native136/apktool.jar d -f -p native136/framework -o native136/decoded native136/original.apk
+          python android-136-menu/prepare.py native136/decoded
+          java -jar native136/apktool.jar b -p native136/framework -o native136/unsigned.apk native136/decoded
+          "$ANDROID_HOME/build-tools/35.0.0/zipalign" -f -p 4 native136/unsigned.apk native136/SprachSchach-1.36-Menue.apk
+          keytool -genkeypair -keystore native136/debug.keystore -storepass android -keypass android -alias androiddebugkey -dname 'CN=Android Debug,O=Android,C=US' -keyalg RSA -keysize 2048 -validity 10000
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks native136/debug.keystore --ks-pass pass:android --key-pass pass:android native136/SprachSchach-1.36-Menue.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify native136/SprachSchach-1.36-Menue.apk
+          cd native136
+          sha256sum SprachSchach-1.36-Menue.apk > SprachSchach-1.36-Menue.apk.sha256
+      - name: Publish menu variant
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --prerelease --title 'SprachSchach 1.36 mit oberer Menüleiste' --notes-file android-136-menu/README.md native136/SprachSchach-1.36-Menue.apk native136/SprachSchach-1.36-Menue.apk.sha256
