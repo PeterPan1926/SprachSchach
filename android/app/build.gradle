@@ -9,6 +9,7 @@ android {
         targetSdk 35
         versionCode 1
         versionName '1.0.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -40,7 +41,11 @@ def prepareWebAssets = tasks.register('prepareWebAssets', Sync) {
 }
 tasks.named('preBuild').configure { dependsOn prepareWebAssets }
 
-dependencies { implementation 'androidx.webkit:webkit:1.12.1' }
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}
 
 // Keep a local development identity across builds, outside version control.
 def createDebugKey = tasks.register('createDebugKey', Exec) {
