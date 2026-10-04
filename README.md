@@ -1,5 +1,25 @@
 # Web-App 1.2.1 – Stand Android 1.36
 
+## Alternative Menüansicht
+
+Über **„Menüansicht ausprobieren“** oben auf der Seite wird die alternative
+Ansicht geöffnet. Sie ist auch direkt über `?ansicht=menue` an der bisherigen
+Website-Adresse erreichbar. Brett, Notation, Chat und Zugeingabe bleiben im
+Spielfenster; **„☰ Menü“** bündelt die übrigen Funktionen:
+
+- **Partie:** Spiel-/Analysemodus, neue Partie, Gegner, Spielstärke, Farbe,
+  Aufgeben/Remis und gespeicherte Partien samt Sicherung.
+- **Analyse:** Varianten, Stockfish-Einstellungen und Partieauswertung.
+- **Dateien:** Kamera/Bild, PGN/FEN importieren und PGN exportieren.
+- **Sprache & KI:** Spracheingabe, Zugansagen, Gesprächsanbieter und API-Zugang.
+- **Darstellung:** LCD, Hauptvarianten, Daueranalyse und Mephisto-Ansicht.
+- **Hilfe:** Bedienhinweise, Lizenzen und Offline-Installation.
+
+**„Klassische Ansicht“** führt zur bisherigen Oberfläche zurück. Beide Ansichten
+verwenden am selben Website-Ursprung dasselbe Archiv und dieselben Einstellungen.
+Die Menüansicht unterstützt Deutsch/Englisch, Tastaturbedienung und kleine
+Bildschirme. Nach dem vollständigen Offline-Download ist auch sie offline nutzbar.
+
 Die Notation lässt sich mit den Pfeiltasten durchgehen: **←** vorheriger Halbzug,
 **→** nächster Halbzug, **↑** Partieanfang, **↓** Partieende. Die Navigation gilt
 für die ausgewählte Hauptpartie oder Variante. In Eingabefeldern und geöffneten

@@ -1,0 +1,40 @@
+.view-switch{display:block;width:fit-content;margin:0 0 12px;color:var(--accent);font-size:14px;text-underline-offset:4px}
+.menu-view main{max-width:1180px}
+.menu-view #playingHeader{display:block!important}
+.menu-view #playingHeader header{gap:12px}
+.menu-view #status{margin:8px 0}
+.menu-bar{display:flex;align-items:center;gap:16px;margin:10px 0 18px;padding:10px 12px;border:1px solid #49616e;border-radius:14px;background:#172a34}
+.menu-bar button{background:var(--accent);color:#102c25;font-weight:700;min-width:112px}
+#menuMode{font-size:14px;color:#c7d7df}
+.menu-view.ipad-ready #playArea{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;height:auto!important;max-height:none!important}
+.menu-view.ipad-ready #ipadBoardColumn,.menu-view.ipad-ready #ipadInfoColumn{display:block!important;overflow:visible!important;max-height:none!important;height:auto!important;min-width:0}
+.menu-view.ipad-ready #boardStage,.menu-view.ipad-ready #board{width:100%!important;max-width:640px!important;height:auto!important;margin:0 auto}
+.menu-view #replayControls{margin-top:12px}
+.menu-view #chat{max-height:230px}
+.menu-view #notation{max-height:190px}
+.menu-view #lcdPanel{margin:0 0 12px;height:auto!important;min-height:0!important}
+.menu-view .menu-explanation{margin-top:12px}
+.menu-quick .entry{display:flex;gap:8px}.menu-quick .entry input{min-width:0;flex:1}
+.menu-quick .controls{margin:10px 0}
+.menu-offline{font-size:12px;color:#b1c2cc;margin:18px 0 0}
+#appMenu{width:min(900px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:1px solid #49616e;border-radius:18px;background:#101c23;color:#edf3f5;overflow:hidden}
+#appMenu::backdrop{background:#050e17b8;backdrop-filter:blur(4px)}
+.menu-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid #49616e}
+.menu-heading h2{font-size:20px;margin:0}.menu-heading button{flex-shrink:0}
+.menu-layout{display:grid;grid-template-columns:185px minmax(0,1fr);max-height:calc(100dvh - 112px)}
+.menu-categories{padding:14px;display:flex;flex-direction:column;gap:8px;background:#172a34;overflow:auto}
+.menu-categories button{text-align:left;min-height:46px;background:transparent;border-color:transparent}
+.menu-categories button[aria-current="page"]{background:#28453f;border-color:var(--accent);color:var(--accent)}
+.menu-content{padding:6px 22px 22px;overflow:auto;overscroll-behavior:contain;min-width:0}
+.menu-content section[hidden]{display:none!important}.menu-content h3{font-size:20px;margin:18px 0}
+.menu-content .card{margin:14px 0}.menu-content select{max-width:100%}.menu-content .controls{flex-wrap:wrap}
+.menu-content #lcdTools{margin-top:16px}.menu-content #lcdTools label,.menu-content #mmviViewOptions label{display:block;margin:12px 0}
+.menu-content #analyzeGame{margin:12px 0}.menu-content #speechOutputToggle{margin-top:12px}
+.menu-view button:focus-visible,.view-switch:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:700px){
+ .menu-view main{padding:12px}.menu-view.ipad-ready #playArea{grid-template-columns:minmax(0,1fr);gap:12px}
+ .menu-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
+ .menu-categories{flex-direction:row;padding:10px;gap:6px;border-bottom:1px solid #49616e}
+ .menu-categories button{white-space:nowrap;flex-shrink:0;padding:8px 12px}
+ .menu-heading{padding:14px}.menu-heading h2{font-size:17px}.menu-content{padding:0 14px 18px}
+}
