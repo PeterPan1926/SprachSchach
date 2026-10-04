@@ -6,10 +6,12 @@ der ursprüngliche Java-Quellcode liegt weiterhin nicht vor. Die Schachdateien,
 Sprachanbindung und nativen MM-VI-Bibliotheken stammen aus der Original-APK.
 Ergänzt werden die obere Menüleiste, die Anordnung der vorhandenen Bedienelemente
 und die normale Engine-Anzeige: 1–4 Varianten mit Bewertung, individueller
-Rechentiefe und bis zu acht berechneten Halbzügen. Unter Darstellung kann zwischen
+Rechentiefe und bis zu acht berechneten Halbzügen. Jede Variante steht
+einzeilig direkt unter dem Brett; die Brettgröße berücksichtigt den Platz
+für die Varianten. Lange Zeilen lassen sich seitlich scrollen. Unter Darstellung kann zwischen
 Normal, LCD und Aus gewählt werden; Daueranalyse bleibt konfigurierbar.
 
-Version `1.36-menue.2`, Paket `de.sprachschach.menue136`, Name **SprachSchach 1.36 Menü**.
+Version `1.36-menue.3`, Paket `de.sprachschach.menue136`, Name **SprachSchach 1.36 Menü**.
 Sie wird separat neben dem Original installiert. Die Original-App und deren Daten
 bleiben erhalten. Archive und API-Schlüssel werden nicht automatisch übernommen;
 PGN aus der bisherigen App exportieren und in der Menüfassung importieren.
