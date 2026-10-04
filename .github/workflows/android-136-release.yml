@@ -42,4 +42,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --prerelease --title 'SprachSchach 1.36 mit oberer Menüleiste' --notes-file android-136-menu/README.md native136/SprachSchach-1.36-Menue.apk native136/SprachSchach-1.36-Menue.apk.sha256
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --prerelease --title 'SprachSchach 1.36 Menü mit normaler Engine-Ansicht' --notes-file android-136-menu/README.md native136/SprachSchach-1.36-Menue.apk native136/SprachSchach-1.36-Menue.apk.sha256
