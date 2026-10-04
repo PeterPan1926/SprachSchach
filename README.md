@@ -11,7 +11,7 @@ mit der Menüansicht. Installation, Datenübernahme und APK-Build sind dort besc
 Über **„Menüansicht ausprobieren“** oben auf der Seite wird die alternative
 Ansicht geöffnet. Sie ist auch direkt über `?ansicht=menue` an der bisherigen
 Website-Adresse erreichbar. Brett, Notation, Chat und Zugeingabe bleiben im
-Spielfenster; **„☰ Menü“** bündelt die übrigen Funktionen:
+Spielfenster. Die Menüleiste in der oberen Zeile bündelt die übrigen Funktionen:
 
 - **Partie:** Spiel-/Analysemodus, neue Partie, Gegner, Spielstärke, Farbe,
   Aufgeben/Remis und gespeicherte Partien samt Sicherung.
@@ -24,7 +24,12 @@ Spielfenster; **„☰ Menü“** bündelt die übrigen Funktionen:
 **„Klassische Ansicht“** führt zur bisherigen Oberfläche zurück. Beide Ansichten
 verwenden am selben Website-Ursprung dasselbe Archiv und dieselben Einstellungen.
 Die Menüansicht unterstützt Deutsch/Englisch, Tastaturbedienung und kleine
-Bildschirme. Nach dem vollständigen Offline-Download ist auch sie offline nutzbar.
+Bildschirme. Am Desktop öffnen die Menüs beim Darüberfahren mit der Maus;
+auf Touch-Geräten durch Antippen. Die Leiste bleibt beim Scrollen oben sichtbar
+und ist auf schmalen Geräten horizontal scrollbar. Mit **←/→** wechseln Sie
+zwischen den Menüschaltflächen, **↓** öffnet die Einstellungen und **Escape**
+schließt das Menü. Ein Klick außerhalb schließt es ebenfalls.
+Nach dem vollständigen Offline-Download ist auch sie offline nutzbar.
 
 Die Notation lässt sich mit den Pfeiltasten durchgehen: **←** vorheriger Halbzug,
 **→** nächster Halbzug, **↑** Partieanfang, **↓** Partieende. Die Navigation gilt
