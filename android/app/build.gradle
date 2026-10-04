@@ -1,0 +1,54 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'de.sprachschach.menue'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'de.sprachschach.menue'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.0'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    signingConfigs { debug { storeFile rootProject.file('debug.keystore') } }
+    androidResources { noCompress += ['wasm', 'bin', 'zip'] }
+    sourceSets.main.assets.srcDir layout.buildDirectory.dir('generated/webAssets')
+}
+
+def prepareWebAssets = tasks.register('prepareWebAssets', Sync) {
+    inputs.file(project.file('build.gradle'))
+    // Only the browser distribution belongs in the APK, never Git metadata or local files.
+    from(rootProject.projectDir.parentFile) {
+        include '*.html', '*.js', '*.css', '*.png', '*.svg', '*.wasm', '*.bin', '*.lay'
+        include 'manifest.webmanifest', 'mephisto-core-parts.json', 'mmvi-runtime.zip'
+        include '*LICENSE*.txt', '*NOTICE*.txt', 'LICENSE', '*.md', 'server.ps1', 'Start-SprachSchach.cmd'
+        include 'mame-legal/**', 'mephisto-runtime/**', 'mmvi/**', 'polgar/**', 'vancouver/**'
+        exclude 'sw.js', 'pwa.js'
+        into 'web'
+        filesMatching('desktop.js') { filter { line -> (line.trim().startsWith('const privacy=') || line.trim().startsWith('const status=')) ? '' : line.replace('iPad DPAPI encrypts it on this PC.', 'It is encrypted with AES-GCM in this app.').replace('iPad', 'Android').replace('Safari', 'Android') } }
+        filesMatching('browser.js') {
+            filter { line -> line.replace("import {setupMephistoWeb}", "import {installAndroidBridge} from './android-bridge.js';\nimport {setupMephistoWeb}") }
+            filter { line -> line.replace('setupMephistoWeb();', 'setupMephistoWeb();installAndroidBridge();') }
+        }
+    }
+    from(rootProject.file('web')) { into 'web' }
+    into layout.buildDirectory.dir('generated/webAssets')
+}
+tasks.named('preBuild').configure { dependsOn prepareWebAssets }
+
+dependencies { implementation 'androidx.webkit:webkit:1.12.1' }
+
+// Keep a local development identity across builds, outside version control.
+def createDebugKey = tasks.register('createDebugKey', Exec) {
+    def key = rootProject.file('debug.keystore')
+    onlyIf { !key.exists() }
+    commandLine new File(System.getProperty('java.home'), 'bin/keytool').absolutePath,
+        '-genkeypair', '-keystore', key.absolutePath,
+        '-storepass', 'android', '-keypass', 'android', '-alias', 'androiddebugkey',
+        '-dname', 'CN=Android Debug,O=Android,C=US', '-keyalg', 'RSA', '-keysize', '2048', '-validity', '10000'
+}
+tasks.configureEach { if (name == 'validateSigningDebug') dependsOn createDebugKey }

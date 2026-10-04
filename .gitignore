@@ -4,3 +4,9 @@ __pycache__/
 .emulator-token
 bridge/roms/
 test-results/
+android/.gradle/
+android/local.properties
+android/**/build/
+*.apk
+*.keystore
+*.jks

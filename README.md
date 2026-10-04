@@ -1,5 +1,11 @@
 # Web-App 1.2.1 – Stand Android 1.36
 
+## Android-App mit Menüansicht
+
+Eine eigenständige Android-App auf Basis dieser Web-App liegt unter
+[`android/`](android/README.md). Sie enthält die lokalen Schach-Engines und startet
+mit der Menüansicht. Installation, Datenübernahme und APK-Build sind dort beschrieben.
+
 ## Alternative Menüansicht
 
 Über **„Menüansicht ausprobieren“** oben auf der Seite wird die alternative
