@@ -34,13 +34,15 @@ jobs:
           sudo chmod a+rw /dev/kvm
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
           echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd --name SprachSchachTest --package 'system-images;android-35;google_apis;x86_64'
-          "$ANDROID_HOME/emulator/emulator" -avd SprachSchachTest -no-window -no-audio -no-snapshot -no-boot-anim -accel on -gpu swiftshader_indirect -memory 2048 -cores 2 > "$RUNNER_TEMP/emulator.log" 2>&1 &
+          "$ANDROID_HOME/emulator/emulator" -avd SprachSchachTest -no-window -no-audio -no-snapshot -no-boot-anim -accel on -gpu auto -memory 2048 -cores 2 > "$RUNNER_TEMP/emulator.log" 2>&1 &
           emulator_pid=$!
           "$ANDROID_HOME/platform-tools/adb" start-server
           for attempt in $(seq 1 120); do
             if ! kill -0 "$emulator_pid" 2>/dev/null; then
               echo 'Android emulator exited before boot' >> "$GITHUB_STEP_SUMMARY"
               tail -80 "$RUNNER_TEMP/emulator.log" >> "$GITHUB_STEP_SUMMARY"
+              diagnostic=$(tail -12 "$RUNNER_TEMP/emulator.log" | tr '\n' ' ')
+              echo "::error title=Android emulator startup failed::$diagnostic"
               exit 1
             fi
             if [ "$("$ANDROID_HOME/platform-tools/adb" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" = 1 ]; then break; fi
