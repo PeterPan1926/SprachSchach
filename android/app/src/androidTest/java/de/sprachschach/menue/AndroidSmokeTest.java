@@ -38,9 +38,10 @@ public class AndroidSmokeTest {
         Intent launch = new Intent(instrumentation.getTargetContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity = (MainActivity)instrumentation.startActivitySync(launch);
         try {
-            awaitTrue("document.querySelectorAll('#board button').length===64 && !!document.querySelector('#menuOpen')");
+            awaitTrue("document.querySelectorAll('#board button').length===64 && document.querySelectorAll('.menu-bar [data-category]').length===6");
             assertEquals("true", evaluate("location.origin==='https://appassets.androidplatform.net' && location.search==='?ansicht=menue' && typeof AndroidNative.postMessage==='function'"));
-            evaluate("document.querySelector('#menuOpen').click()");
+            assertEquals("true", evaluate("document.querySelector('.menu-bar').getBoundingClientRect().top < document.querySelector('#playingHeader').getBoundingClientRect().top"));
+            evaluate("document.querySelector('[data-category=game]').click()");
             assertEquals("true", evaluate("document.querySelector('#appMenu').open && !document.querySelector('#menu-game').hidden"));
             evaluate("document.querySelector('[data-category=display]').click()");
             assertEquals("true", evaluate("!document.querySelector('#menu-display').hidden"));

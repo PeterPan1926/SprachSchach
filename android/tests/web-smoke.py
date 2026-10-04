@@ -4,16 +4,24 @@ BASE_URL=os.environ.get("ANDROID_WEB_TEST_URL", "http://127.0.0.1:8766/")
 CHROMIUM=os.environ.get("CHROMIUM", "/usr/bin/chromium")
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path=CHROMIUM,args=['--no-sandbox'])
- context=b.new_context(viewport={'width':412,'height':915})
+ context=b.new_context(viewport={'width':412,'height':915},has_touch=True,is_mobile=True)
  context.add_init_script("""window.nativeMessages=[];window.AndroidNative={postMessage:raw=>{const d=JSON.parse(raw);window.nativeMessages.push(d);if(d.type==='speak')setTimeout(()=>window.androidNativeEvent('speechEnd',{id:d.id}),10);}};""")
  page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(BASE_URL+'?ansicht=menue',wait_until='networkidle')
  assert page.locator('#board button').count()==64
+ assert page.locator('.menu-bar [data-category]').count()==6
+ assert page.locator('.menu-bar').bounding_box()['y']<page.locator('#playingHeader').bounding_box()['y']
+ for category in ['game','analysis','files','voice','display','help']:
+  page.locator('[data-category="'+category+'"]').tap()
+  assert page.locator('#menu-'+category).is_visible()
+  assert page.locator('#appMenu').bounding_box()['width']<=412
+  page.locator('#menuClose').tap()
+ assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
  assert 'Offline bereit.' in page.locator('#menuOfflineStatus').inner_text()
  page.locator('#entry').fill('e2e4');page.locator('#submit').click()
  page.wait_for_function("document.querySelector('#history').innerText.includes('1...')",timeout=90000)
  assert page.evaluate("nativeMessages.some(x=>x.type==='speak')")
- page.locator('#menuOpen').click();page.locator('[data-category="files"]').click();page.locator('#pgnSave').click()
+ page.locator('[data-category="files"]').tap();page.locator('#pgnSave').click()
  assert page.evaluate("nativeMessages.some(x=>x.type==='save'&&x.name.endsWith('.pgn'))")
  page.locator('#pgnCopy').click();assert page.evaluate("nativeMessages.some(x=>x.type==='copy')")
  page.locator('[data-category="game"]').click()

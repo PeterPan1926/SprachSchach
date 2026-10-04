@@ -1,8 +1,12 @@
 # SprachSchach Menü für Android
 
 Eigenständige Android-App auf Basis der Web-App, ab Android 8.0 (API 26).
-Die App heißt **SprachSchach Menü**, Paket `de.sprachschach.menue`, Version 1.0.0.
-Sie startet mit der Menüansicht. Die klassische Ansicht bleibt über den Link
+Die App heißt **SprachSchach Menü**, Paket `de.sprachschach.menue`, Version 1.0.1.
+Sie startet mit der Menüansicht. Die Menüs Partie, Analyse, Dateien, Sprache & KI,
+Darstellung und Hilfe stehen in der oberen Zeile und öffnen durch Antippen.
+Auf schmalen Geräten lässt sich die Leiste seitlich scrollen; beim Scrollen
+der Seite bleibt sie oben sichtbar. Eine angeschlossene Maus öffnet Menüs
+auch durch Mouse-over. Die klassische Ansicht bleibt über den Link
 oben erreichbar. Beide Ansichten teilen das Archiv innerhalb dieser App.
 
 Die App enthält die Web-Dateien, Stockfish und die drei Mephisto-WebAssembly-
