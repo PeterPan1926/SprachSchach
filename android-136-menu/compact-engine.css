@@ -32,3 +32,30 @@
  width:var(--surface-width)!important;height:var(--surface-height)!important;
  max-width:none!important;margin:0!important;aspect-ratio:auto!important;
 }
+
+/* Portrait LCD sits above the same board column, with room reserved for both. */
+@media(orientation:portrait){
+ .menu-view.ipad-ready #lcdPanel:not([hidden]){display:flex!important;flex-direction:column;gap:3px;height:auto!important;min-height:0!important;max-height:none!important;flex:none!important;padding:8px!important;border-width:3px;margin:0 0 6px!important;overflow:visible!important}
+ .menu-view.ipad-ready #lcdPanel .lcd-inline-primary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+ .menu-view.ipad-ready #lcdPanel #lcdEvaluation{height:30px;margin:0}
+ .menu-view.ipad-ready #lcdPanel #lcdLastMove{height:18px;min-height:18px;font-size:10px;margin:0}
+ .menu-view.ipad-ready #lcdPanel #lcdLastMoveValue{font-size:11px}
+ .menu-view.ipad-ready #lcdPanel #lcdMoveLabel{font-size:10px;margin:0}
+ .menu-view.ipad-ready #lcdPanel #lcdMove{height:44px;margin:0;gap:2px}
+ .menu-view.ipad-ready #lcdPanel #lcdNotation{font-size:10px;margin:0;line-height:12px}
+ .menu-view.ipad-ready #lcdPanel #lcdState{font-size:10px;margin:0;line-height:12px}
+ .menu-view.ipad-ready #lcdPanel #lcdRetry{position:static;align-self:flex-end}
+ .menu-view.ipad-ready #lcdPanel.multipv-active #lcdMultiMetrics{font-size:10px;line-height:12px}
+ .menu-view.ipad-ready #lcdPanel.multipv-active #lcdMultiPv{flex:none;gap:3px}
+ .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-group{display:grid;grid-template-columns:75px minmax(0,1fr);align-items:center;flex:none;gap:8px;padding-top:2px;height:auto}
+ .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-score{display:flex;flex-direction:column;align-items:flex-start;height:auto;gap:2px}
+ .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-score small{font-size:10px}
+ .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-score-value{height:16px;min-height:16px;flex:none;width:70px;margin:0;max-width:85px}
+ .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-moves{flex:none;height:calc(var(--multipv-rows,2) * 14px);gap:1px}
+ .portrait-lcd-fit.menu-view.ipad-ready #boardStage{width:var(--lcd-stage-width,100%)!important;max-width:var(--lcd-stage-width,100%)!important;margin:0 auto!important}
+ .portrait-lcd-fit.menu-view.ipad-ready #boardStage:not(.mephisto-surface) #board{width:100%!important;max-width:none!important}
+ .portrait-lcd-fit #playingHeader .badge,.portrait-lcd-fit #subtitle{display:none}
+ .portrait-lcd-fit #title{font-size:18px;margin:0}
+ .portrait-lcd-fit #language{font-size:13px;padding:4px 8px}
+ .portrait-lcd-fit #status{font-size:13px;min-height:18px;line-height:18px;margin:3px 0}
+}
