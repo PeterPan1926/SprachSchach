@@ -13,7 +13,7 @@
 .engine-line-depth{font-size:11px;margin-left:0}
 .engine-line-pv{flex-shrink:0;font-size:12px;line-height:1.4;white-space:nowrap;overflow-wrap:normal;margin:0}
 #boardStage{width:100%;margin:0 auto}
-.menu-view.ipad-ready #boardStage:has(+ #enginePanel:not([hidden])) #board{width:min(100%,var(--engine-board-size,100%))!important;max-width:var(--engine-board-size,100%)!important;margin:0 auto!important}
+.menu-view.ipad-ready #boardStage:not(.mephisto-surface):has(+ #enginePanel:not([hidden])) #board{width:min(100%,var(--engine-board-size,100%))!important;max-width:var(--engine-board-size,100%)!important;margin:0 auto!important}
 @media(max-width:420px){.engine-line,.engine-line-metrics{gap:4px}.engine-line-pv{font-size:11px}}
 @media(max-height:500px){
  .menu-view main{padding:6px!important}
@@ -25,4 +25,10 @@
  .menu-view .menu-bar{margin:0 0 4px;padding:2px}
  .menu-view .menu-categories button{font-size:12px;padding:4px 8px;min-height:30px}
  .engine-line{min-height:24px;padding:2px 0}
+}
+
+/* Photographic boards use their calibrated rectangle, not square-board fitting. */
+.menu-view.ipad-ready.mmvi-artwork #boardStage.mephisto-surface #board.surface-board{
+ width:var(--surface-width)!important;height:var(--surface-height)!important;
+ max-width:none!important;margin:0!important;aspect-ratio:auto!important;
 }

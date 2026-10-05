@@ -11,7 +11,11 @@ einzeilig direkt unter dem Brett; die Brettgröße berücksichtigt den Platz
 für die Varianten. Lange Zeilen lassen sich seitlich scrollen. Unter Darstellung kann zwischen
 Normal, LCD und Aus gewählt werden; Daueranalyse bleibt konfigurierbar.
 
-Version `1.36-menue.3`, Paket `de.sprachschach.menue136`, Name **SprachSchach 1.36 Menü**.
+Die Figurengitter von Vancouver und Polgar verwenden die kalibrierten
+Fotobrett-Koordinaten. Die Größenanpassung des klassischen Bretts überschreibt
+diese Koordinaten nicht.
+
+Version `1.36-menue.4`, Paket `de.sprachschach.menue136`, Name **SprachSchach 1.36 Menü**.
 Sie wird separat neben dem Original installiert. Die Original-App und deren Daten
 bleiben erhalten. Archive und API-Schlüssel werden nicht automatisch übernommen;
 PGN aus der bisherigen App exportieren und in der Menüfassung importieren.
