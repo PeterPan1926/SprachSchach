@@ -23,6 +23,13 @@ with sync_playwright() as p:
     assert board['y']+board['height']<=height
     assert lcd['y']>=0
     assert page.locator('#lcdPanel').evaluate('e=>e.scrollHeight<=e.clientHeight+2')
+    if count=='3':
+     for group in page.locator('.multipv-moves').all():
+      rows=group.locator(':scope > *').all()
+      assert len(rows)==2
+      first,second=[row.bounding_box() for row in rows]
+      gap=second['y']-(first['y']+first['height'])
+      assert 5.5<=gap<=6.5,('LCD row gap',gap)
     if machine in ['van32','polgar101']:
      stage=page.locator('#boardStage').bounding_box();assert abs(board['width']/stage['width']-.841)<.003
     if os.environ.get('SCREENSHOT_DIR') and count=='3':page.screenshot(path=os.path.join(os.environ['SCREENSHOT_DIR'],f'lcd-{machine}-{width}.png'))

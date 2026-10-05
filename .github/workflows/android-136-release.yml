@@ -2,6 +2,12 @@ name: Android 1.36 Menu Release
 on:
   push:
     tags: ['android-136-menu-v*']
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release-Tag für die vorbereitete Version (aktuell android-136-menu-v6)'
+        required: true
+        default: android-136-menu-v6
 permissions:
   contents: write
 jobs:
@@ -17,6 +23,15 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - name: Check persistent signing key
+        env:
+          ANDROID136_KEYSTORE_BASE64: ${{ secrets.ANDROID136_KEYSTORE_BASE64 }}
+          ANDROID136_KEYSTORE_PASSWORD: ${{ secrets.ANDROID136_KEYSTORE_PASSWORD }}
+          ANDROID136_CERT_SHA256: ${{ vars.ANDROID136_CERT_SHA256 }}
+          RELEASE_TAG: ${{ inputs.release_tag || github.ref_name }}
+        run: |
+          [[ "$RELEASE_TAG" =~ ^android-136-menu-v[0-9]+$ ]] || { echo 'Ungültiger Release-Tag'; exit 1; }
+          python android-136-menu/sign-apk.py
       - name: Prepare build tools and original APK
         run: |
           python -m pip install PyYAML==6.0.2
@@ -32,14 +47,19 @@ jobs:
           python android-136-menu/prepare.py native136/decoded
           java -jar native136/apktool.jar b -p native136/framework -o native136/unsigned.apk native136/decoded
           "$ANDROID_HOME/build-tools/35.0.0/zipalign" -f -p 4 native136/unsigned.apk native136/SprachSchach-1.36-Menue.apk
-          keytool -genkeypair -keystore native136/debug.keystore -storepass android -keypass android -alias androiddebugkey -dname 'CN=Android Debug,O=Android,C=US' -keyalg RSA -keysize 2048 -validity 10000
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks native136/debug.keystore --ks-pass pass:android --key-pass pass:android native136/SprachSchach-1.36-Menue.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify native136/SprachSchach-1.36-Menue.apk
+      - name: Sign with persistent release key
+        env:
+          ANDROID136_KEYSTORE_BASE64: ${{ secrets.ANDROID136_KEYSTORE_BASE64 }}
+          ANDROID136_KEYSTORE_PASSWORD: ${{ secrets.ANDROID136_KEYSTORE_PASSWORD }}
+          ANDROID136_CERT_SHA256: ${{ vars.ANDROID136_CERT_SHA256 }}
+        run: |
+          python android-136-menu/sign-apk.py native136/SprachSchach-1.36-Menue.apk --apksigner "$ANDROID_HOME/build-tools/35.0.0/apksigner"
           cd native136
           sha256sum SprachSchach-1.36-Menue.apk > SprachSchach-1.36-Menue.apk.sha256
       - name: Publish menu variant
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_TAG: ${{ inputs.release_tag || github.ref_name }}
+          RELEASE_COMMIT: ${{ github.sha }}
         run: |
-          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --prerelease --title 'SprachSchach 1.36 Menü – LCD und Brett gemeinsam im Hochformat' --notes-file android-136-menu/README.md native136/SprachSchach-1.36-Menue.apk native136/SprachSchach-1.36-Menue.apk.sha256
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --prerelease --title 'SprachSchach 1.36 Menü – LCD-Abstand und dauerhafte Update-Signatur' --notes-file android-136-menu/README.md native136/SprachSchach-1.36-Menue.apk native136/SprachSchach-1.36-Menue.apk.sha256

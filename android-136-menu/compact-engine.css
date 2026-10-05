@@ -51,7 +51,8 @@
  .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-score{display:flex;flex-direction:column;align-items:flex-start;height:auto;gap:2px}
  .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-score small{font-size:10px}
  .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-score-value{height:16px;min-height:16px;flex:none;width:70px;margin:0;max-width:85px}
- .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-moves{flex:none;height:calc(var(--multipv-rows,2) * 14px);gap:1px}
+ /* 6 CSS pixels are approximately 1.6 mm; reserve the gap in the panel height. */
+ .menu-view.ipad-ready #lcdPanel.multipv-active .multipv-moves{flex:none;height:calc(var(--multipv-rows,2) * 20px - 6px);gap:6px}
  .portrait-lcd-fit.menu-view.ipad-ready #boardStage{width:var(--lcd-stage-width,100%)!important;max-width:var(--lcd-stage-width,100%)!important;margin:0 auto!important}
  .portrait-lcd-fit.menu-view.ipad-ready #boardStage:not(.mephisto-surface) #board{width:100%!important;max-width:none!important}
  .portrait-lcd-fit #playingHeader .badge,.portrait-lcd-fit #subtitle{display:none}
