@@ -66,12 +66,12 @@ Nur vertrauenswürdige Repository-Verwalter dürfen den Release-Workflow bearbei
 ## Neues Release bauen
 
 Nach erfolgreicher Einrichtung [Android 1.36 Menu Release](https://github.com/PeterPan1926/SprachSchach/actions/workflows/android-136-release.yml)
-öffnen, **Run workflow** auswählen, Branch **main** und Tag **android-136-menu-v6**
-beibehalten. Der Workflow baut die Version 6 und veröffentlicht ihre APK als
+öffnen, **Run workflow** auswählen, Branch **main** und Tag **android-136-menu-v7**
+beibehalten. Der Workflow baut die Version 7 und veröffentlicht ihre APK als
 Vorab-Release. Alternativ:
 
 ```powershell
-gh workflow run android-136-release.yml --repo PeterPan1926/SprachSchach --ref main -f release_tag=android-136-menu-v6
+gh workflow run android-136-release.yml --repo PeterPan1926/SprachSchach --ref main -f release_tag=android-136-menu-v7
 ```
 
 Der Release-Tag muss zur vorbereiteten Versionsnummer passen. Spätere Versionen

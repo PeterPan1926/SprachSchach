@@ -1,7 +1,7 @@
 // Alternative presentation: move existing controls so their state and handlers stay shared.
 const categories=[
- ['game','Partie','Game'],['analysis','Analyse','Analysis'],['files','Dateien','Files'],
- ['voice','Sprache & KI','Voice & AI'],['display','Darstellung','Display'],['help','Hilfe','Help']
+ ['game','Partie','Game'],['analysis','Analyse','Analysis'],
+ ['voice','Sprache','Language'],['display','Ansicht','View'],['help','Hilfe','Help']
 ];
 window.addEventListener('DOMContentLoaded',()=>{
  const $=id=>document.getElementById(id),main=document.querySelector('main');
@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded',()=>{
  const move=(category,node)=>{if(node)panels[category].append(node);};
  move('game',$('modeControls'));move('game',$('new').parentElement);move('game',$('opponentSettings'));move('game',$('resign').parentElement);move('game',$('archive').closest('.card'));
  move('analysis',$('variationTools'));move('analysis',$('engineSettings'));move('analysis',$('analyzeGame'));move('analysis',$('analysisHint'));move('analysis',$('summaryCard'));
- move('files',$('importText').parentElement);move('files',$('pgnSave').closest('.card'));
+ move('game',$('importText').parentElement);move('game',$('pgnSave').closest('.card'));
  move('voice',$('speechOutputToggle'));move('voice',$('voiceLabel').closest('.card'));
  move('display',$('engineViewControls'));move('display',$('lcdEnabled').closest('label'));move('display',$('lcdTools'));move('display',$('mmviViewOptions'));
  move('help',$('help'));move('help',$('privacy'));move('help',main.querySelector('details.footer'));move('help',main.querySelector('.pwa-card'));

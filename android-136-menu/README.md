@@ -4,6 +4,7 @@ Diese Variante baut auf der bereitgestellten APK aus dem Release
 `sprach_schach_v1_36` auf. Apktool rekonstruiert Ressourcen und Dalvik-Code;
 der ursprüngliche Java-Quellcode liegt weiterhin nicht vor. Die Schachdateien,
 Sprachanbindung und nativen MM-VI-Bibliotheken stammen aus der Original-APK.
+Das Menü Partie enthält auch Dateiimport und PGN-Export; die weiteren Menüs heißen Analyse, Sprache, Ansicht und Hilfe.
 Ergänzt werden die obere Menüleiste, die Anordnung der vorhandenen Bedienelemente
 und die normale Engine-Anzeige: 1–4 Varianten mit Bewertung, individueller
 Rechentiefe und bis zu acht berechneten Halbzügen. Jede Variante steht
@@ -21,7 +22,7 @@ Die Figurengitter von Vancouver und Polgar verwenden die kalibrierten
 Fotobrett-Koordinaten. Die Größenanpassung des klassischen Bretts überschreibt
 diese Koordinaten nicht.
 
-Version `1.36-menue.6`, Paket `de.sprachschach.menue136`, Name **SprachSchach 1.36 Menü**.
+Version `1.36-menue.7`, Paket `de.sprachschach.menue136`, Name **SprachSchach 1.36 Menü**.
 Sie wird separat neben dem Original installiert. Die Original-App und deren Daten
 bleiben erhalten. Archive und API-Schlüssel werden nicht automatisch übernommen;
 PGN aus der bisherigen App exportieren und in der Menüfassung importieren.
